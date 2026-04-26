@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Navrivon - Enterprise-grade software solutions for digital transformation">
+    <meta name="theme-color" content="#0d0d0d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Navrivon">
+
+    <!-- Favicon References -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="android-chrome-icon" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
+    <link rel="android-chrome-icon" sizes="512x512" href="assets/favicon/android-chrome-512x512.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
+    <title>Navrivon - Enterprise Software Solutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- PAGE LOADER -->
+    <div id="page-loader">
+        <img src="assets/logo/favicon.png" alt="Navrivon" class="loader-logo" loading="lazy">
+    </div>
+
+    <!-- ALERT BAR -->
+    <div id="alert-bar"></div>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/logo/small.png" alt="Navrivon Logo" loading="lazy">
+                <span class="nav-logo-text">Navrivon</span>
+            </div>
+            <ul class="nav-links" id="nav-links"></ul>
+            <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
+                Started</button>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="hero-background" id="hero-background"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <h1 class="hero-headline" id="hero-headline"></h1>
+            <p class="hero-subheadline" id="hero-subheadline"></p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary"
+                    onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Start Free
+                    Trial</button>
+                <button class="btn btn-secondary" onclick="alert('Demo video coming soon!')">Watch Demo</button>
+            </div>
+            <p class="hero-trust">Trusted by <strong id="hero-trust-count"></strong></p>
+            <div class="scroll-chevron">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <section id="stats">
+        <div class="stats-container" id="stats-container"></div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section id="features">
+        <div class="section-header">
+            <h2 class="section-title">Everything you need to build at scale</h2>
+            <p class="section-subtitle">Powerful tools designed for modern development teams</p>
+        </div>
+        <div class="features-grid" id="features-grid"></div>
+    </section>
+
+    <!-- HOW IT WORKS SECTION -->
+    <section id="how-it-works">
+        <div class="how-it-works-container">
+            <div class="section-header">
+                <h2 class="section-title">How it Works</h2>
+                <p class="section-subtitle">Three simple steps to get started</p>
+            </div>
+            <div class="how-it-works-grid" id="how-it-works-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Connect Your Stack</h3>
+                    <p class="step-description">Integrate with your existing tools and services seamlessly</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Configure Workflow</h3>
+                    <p class="step-description">Set up automation and customize to your exact needs</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Ship & Scale</h3>
+                    <p class="step-description">Deploy with confidence and scale effortlessly</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MESSAGES SECTION -->
+    <section id="messages">
+        <div class="messages-container">
+            <div class="section-header">
+                <h2 class="section-title">Latest from our team</h2>
+                <p class="section-subtitle">Updates and insights from Navrivon leadership</p>
+            </div>
+            <div class="messages-grid" id="messages-grid"></div>
+        </div>
+    </section>
+
+    <!-- PRICING SECTION -->
+    <section id="pricing">
+        <div class="pricing-container">
+            <div class="section-header">
+                <h2 class="section-title">Simple, transparent pricing</h2>
+                <p class="section-subtitle">Choose the perfect plan for your business</p>
+            </div>
+            <div class="pricing-toggle-container">
+                <span class="toggle-label" id="monthly-label">Monthly</span>
+                <div class="toggle" id="pricing-toggle">
+                    <div class="toggle-slider"></div>
+                </div>
+                <span class="toggle-label" id="yearly-label">Yearly</span>
+            </div>
+            <div class="pricing-cards" id="pricing-cards"></div>
+            <div class="faqs-container" id="faqs-container"></div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <h2 class="section-title">Loved by teams worldwide</h2>
+                <p class="section-subtitle">See what our customers have to say</p>
+            </div>
+            <div class="carousel-wrapper">
+                <div class="carousel" id="carousel"></div>
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+    </section>
+
+    <!-- TEAM SECTION -->
+    <section id="team">
+        <div class="team-container">
+            <div class="section-header">
+                <h2 class="section-title">The people behind Navrivon</h2>
+                <p class="section-subtitle">Meet the talented team driving innovation</p>
+            </div>
+            <div class="team-grid" id="team-grid"></div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 class="section-title">Get in touch</h2>
+                <div class="contact-info-item">
+                    <div class="contact-info-label">Email</div>
+                    <a href="mailto:hello@navrivon.com" class="contact-info-value" id="contact-email"></a>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-label">Phone</div>
+                    <a href="tel:+923008889999" class="contact-info-value" id="contact-phone"></a>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-label">Address</div>
+                    <div class="contact-info-value" id="contact-address"></div>
+                </div>
+                <div class="contact-social" id="contact-social"></div>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label class="form-label">Full Name</label>
+                    <input type="text" class="form-input" name="name" placeholder="Your name" required>
+                    <div class="form-error">Please enter your name</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Email</label>
+                    <input type="email" class="form-input" name="email" placeholder="your@email.com" required>
+                    <div class="form-error">Please enter a valid email</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Subject</label>
+                    <select class="form-select" name="subject" required>
+                        <option value="">Select a subject</option>
+                        <option value="Sales">Sales Inquiry</option>
+                        <option value="Support">Technical Support</option>
+                        <option value="Partnership">Partnership</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <div class="form-error">Please select a subject</div>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-textarea" name="message" placeholder="Tell us more..." required></textarea>
+                    <div class="form-error">Please enter your message</div>
+                </div>
+                <button type="submit" class="form-submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <div>
+                    <div class="footer-brand">
+                        <img src="assets/logo/full.png" alt="Navrivon Logo" loading="lazy">
+                        <div class="footer-brand-info">
+                            <div class="footer-brand-name">Navrivon</div>
+                            <div class="footer-brand-tagline" id="footer-tagline"></div>
+                        </div>
+                    </div>
+                    <div class="footer-social" id="footer-social"></div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <div class="footer-links">
+                        <a href="#features">Features</a>
+                        <a href="#pricing">Pricing</a>
+                        <a href="#">Security</a>
+                        <a href="#">Status</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <div class="footer-links">
+                        <a href="#team">Team</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Press</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <div class="footer-links">
+                        <a href="#">Documentation</a>
+                        <a href="#">API Docs</a>
+                        <a href="#">Support</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div>© 2025 Navrivon. All rights reserved.</div>
+                <div class="footer-links-bottom">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MAIN JAVASCRIPT -->
+    <script>
+        // ===== APPLICATION STATE =====
+        let appData = {};
+        let currentCarouselIndex = 0;
+        let isYearly = localStorage.getItem('pricing-yearly') === 'true';
+        const dismissedAlerts = JSON.parse(localStorage.getItem('dismissed-alerts') || '[]');
+
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Load data
+                const response = await fetch('data.json');
+                appData = await response.json();
+
+                // Render all sections
+                renderAlerts();
+                renderNavigation();
+                renderHero();
+                renderStats();
+                renderFeatures();
+                renderMessages();
+                renderPricing();
+                renderTestimonials();
+                renderTeam();
+                renderContact();
+                renderFooter();
+
+                // Setup interactions
+                setupScrollAnimations();
+                setupNavbarScroll();
+                setupParticles();
+                setupPricingToggle();
+                setupCarousel();
+                setupFAQ();
+                setupContactForm();
+                setupHamburgerMenu();
+
+                // Fade out loader
+                setTimeout(() => {
+                    const loader = document.getElementById('page-loader');
+                    loader.classList.add('fade-out');
+                }, 800);
+            } catch (error) {
+                console.error('Error loading application:', error);
+            }
+        });
+
+        // ===== RENDER FUNCTIONS =====
+        function renderAlerts() {
+            const alertBar = document.getElementById('alert-bar');
+            alertBar.innerHTML = '';
+
+            appData.alerts.forEach(alert => {
+                if (alert.active && !dismissedAlerts.includes(alert.id)) {
+                    const alertEl = document.createElement('div');
+                    alertEl.className = `alert ${alert.type}`;
+                    alertEl.innerHTML = `
+            <div class="alert-content">
+              <div class="alert-title">${alert.title}</div>
+              <div class="alert-message">${alert.message}</div>
+              ${alert.link ? `<a href="${alert.link.url}" class="alert-link">${alert.link.text}</a>` : ''}
+            </div>
+            ${alert.dismissible ? `<button class="alert-close" aria-label="Close alert">×</button>` : ''}
+          `;
+
+                    if (alert.dismissible) {
+                        alertEl.querySelector('.alert-close').addEventListener('click', () => {
+                            dismissedAlerts.push(alert.id);
+                            localStorage.setItem('dismissed-alerts', JSON.stringify(dismissedAlerts));
+                            alertEl.remove();
+                        });
+                    }
+
+                    alertBar.appendChild(alertEl);
+                }
+            });
+        }
+
+        function renderNavigation() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.innerHTML = appData.nav_links
+                .map(link => `<li><a href="${link.href}">${link.label}</a></li>`)
+                .join('');
+        }
+
+        function renderHero() {
+            document.getElementById('hero-headline').textContent = appData.company.tagline;
+            document.getElementById('hero-subheadline').textContent = appData.company.description;
+            document.getElementById('hero-trust-count').textContent = appData.stats[0].value;
+        }
+
+        function renderStats() {
+            const statsContainer = document.getElementById('stats-container');
+            statsContainer.innerHTML = appData.stats
+                .map((stat, idx) => `
+          <div class="stat-item" data-aos="fadeInUp" style="animation-delay: ${idx * 80}ms">
+            <div class="stat-value" data-value="${stat.value}">0</div>
+            <div class="stat-label">${stat.label}</div>
+          </div>
+        `)
+                .join('');
+        }
+
+        function renderFeatures() {
+            const featuresGrid = document.getElementById('features-grid');
+            featuresGrid.innerHTML = appData.features
+                .map((feature, idx) => `
+          <div class="feature-card" data-aos="zoomInUp" style="animation-delay: ${idx * 80}ms">
+            <span class="feature-icon">${feature.icon}</span>
+            <h3 class="feature-title">${feature.title}</h3>
+            <p class="feature-description">${feature.description}</p>
+            ${feature.badge ? `<span class="feature-badge">${feature.badge}</span>` : ''}
+          </div>
+        `)
+                .join('');
+        }
+
+        function renderMessages() {
+            const messagesGrid = document.getElementById('messages-grid');
+            const sorted = [...appData.messages].sort((a, b) => b.pinned - a.pinned);
+
+            messagesGrid.innerHTML = sorted
+                .map((message, idx) => `
+          <div class="message-card" data-aos="flipInX" style="animation-delay: ${idx * 80}ms">
+            <div class="message-header">
+              <img src="${message.avatar}" alt="${message.from}" class="message-avatar" loading="lazy">
+              <div class="message-info">
+                <div class="message-name">${message.from}</div>
+              </div>
+              ${message.pinned ? '<span class="message-pin">📌</span>' : ''}
+            </div>
+            <div class="message-subject">${message.subject}</div>
+            <div class="message-body">${message.body}</div>
+            <div class="message-date">${new Date(message.date).toLocaleDateString()}</div>
+          </div>
+        `)
+                .join('');
+        }
+
+        function renderPricing() {
+            const pricingCards = document.getElementById('pricing-cards');
+            pricingCards.innerHTML = appData.pricing
+                .map((plan, idx) => {
+                    const price = isYearly ? plan.price_yearly : plan.price_monthly;
+                    const period = isYearly ? '/year' : '/month';
+                    const savings = isYearly && plan.price_yearly ? ' Save 25%' : '';
+
+                    return `
+            <div class="pricing-card ${plan.highlighted ? 'highlighted' : ''}" data-aos="fadeInUp" style="animation-delay: ${idx * 80}ms">
+              ${plan.badge ? `<div class="pricing-badge">${plan.badge}</div>` : ''}
+              <h3 class="pricing-name">${plan.name}</h3>
+              <div class="pricing-price">
+                ${price !== null ? `
+                  <span>${plan.currency}</span>
+                  <span>${price}</span>
+                  <span class="pricing-price-period">${period}</span>
+                  ${savings ? `<span class="pricing-yearly-save">${savings}</span>` : ''}
+                ` : '<span>Custom</span>'}
+              </div>
+              <p class="pricing-description">${plan.description}</p>
+              <div class="pricing-features">
+                ${plan.features
+                            .map(feature => `
+                    <div class="pricing-feature ${feature.included ? 'included' : ''}">
+                      <span class="pricing-feature-check">${feature.included ? '✓' : '✗'}</span>
+                      <span class="pricing-feature-text">${feature.text}</span>
+                    </div>
+                  `)
+                            .join('')}
+              </div>
+              <button class="pricing-cta" onclick="alert('${plan.cta}'); document.getElementById('contact-form').scrollIntoView({behavior:\'smooth\'})">${plan.cta}</button>
+            </div>
+          `;
+                })
+                .join('');
+
+            // Render FAQs
+            const faqsContainer = document.getElementById('faqs-container');
+            faqsContainer.innerHTML = `
+        <h3 class="section-title" style="text-align: center; margin-top: var(--spacing-3xl); margin-bottom: var(--spacing-2xl); font-size: 28px;">Frequently Asked Questions</h3>
+        ${appData.faqs
+                    .map((faq, idx) => `
+            <div class="faq-item" data-faq="${idx}">
+              <div class="faq-question">
+                ${faq.question}
+                <span class="faq-toggle">⌄</span>
+              </div>
+              <div class="faq-answer">${faq.answer}</div>
+            </div>
+          `)
+                    .join('')}
+      `;
+        }
+
+        function renderTestimonials() {
+            const carousel = document.getElementById('carousel');
+            carousel.innerHTML = appData.testimonials
+                .map((testimonial, idx) => `
+          <div class="testimonial-card" data-aos="flipInY">
+            <div class="testimonial-stars">
+              ${[...Array(testimonial.rating)].map(() => '<span class="star">★</span>').join('')}
+            </div>
+            <p class="testimonial-text">"${testimonial.text}"</p>
+            <div class="testimonial-author">
+              <img src="${testimonial.avatar}" alt="${testimonial.name}" class="testimonial-avatar" loading="lazy">
+              <div class="testimonial-info">
+                <div class="testimonial-name">${testimonial.name}</div>
+                <div class="testimonial-role">${testimonial.role}</div>
+              </div>
+            </div>
+          </div>
+        `)
+                .join('');
+
+            // Render dots
+            const dots = document.getElementById('carousel-dots');
+            dots.innerHTML = appData.testimonials
+                .map((_, idx) => `<div class="dot ${idx === 0 ? 'active' : ''}" data-dot="${idx}"></div>`)
+                .join('');
+        }
+
+        function renderTeam() {
+            const teamGrid = document.getElementById('team-grid');
+            teamGrid.innerHTML = appData.team
+                .map((member, idx) => `
+          <div class="team-member" data-aos="rotateIn" style="animation-delay: ${idx * 80}ms">
+            <img src="${member.photo}" alt="${member.name}" class="team-photo" loading="lazy">
+            <h3 class="team-name">${member.name}</h3>
+            <div class="team-role">${member.role}</div>
+            <p class="team-bio">${member.bio}</p>
+            <div class="team-social">
+              <a href="${member.linkedin}" target="_blank" rel="noopener" title="LinkedIn">in</a>
+            </div>
+          </div>
+        `)
+                .join('');
+        }
+
+        function renderContact() {
+            document.getElementById('contact-email').textContent = appData.company.email;
+            document.getElementById('contact-phone').textContent = appData.company.phone;
+            document.getElementById('contact-address').textContent = appData.company.address;
+
+            const contactSocial = document.getElementById('contact-social');
+            contactSocial.innerHTML = `
+        <a href="${appData.company.social.twitter}" target="_blank" rel="noopener" title="Twitter">𝕏</a>
+        <a href="${appData.company.social.linkedin}" target="_blank" rel="noopener" title="LinkedIn">in</a>
+        <a href="${appData.company.social.github}" target="_blank" rel="noopener" title="GitHub">⚙</a>
+        <a href="${appData.company.social.instagram}" target="_blank" rel="noopener" title="Instagram">📷</a>
+      `;
+        }
+
+        function renderFooter() {
+            document.getElementById('footer-tagline').textContent = appData.company.tagline;
+            const footerSocial = document.getElementById('footer-social');
+            footerSocial.innerHTML = `
+        <a href="${appData.company.social.twitter}" target="_blank" rel="noopener" title="Twitter">𝕏</a>
+        <a href="${appData.company.social.linkedin}" target="_blank" rel="noopener" title="LinkedIn">in</a>
+        <a href="${appData.company.social.github}" target="_blank" rel="noopener" title="GitHub">⚙</a>
+        <a href="${appData.company.social.instagram}" target="_blank" rel="noopener" title="Instagram">📷</a>
+      `;
+        }
+
+        // ===== INTERACTION SETUP =====
+        function setupScrollAnimations() {
+            // Extended animation options with stagger support
+            const animationMap = {
+                '.section-header': { animation: 'fadeInUp', delay: 0 },
+                '.feature-card': { animation: 'zoomInUp', stagger: true },
+                '.message-card': { animation: 'flipInX', stagger: true },
+                '.pricing-card': { animation: 'fadeInUp', stagger: true },
+                '.team-member': { animation: 'rotateIn', stagger: true },
+                '.stat-item': { animation: 'fadeInUp', stagger: true },
+                '.step': { animation: 'fadeInLeft', stagger: true },
+                '.testimonial-card': { animation: 'flipInY', delay: 0 },
+                '.faq-item': { animation: 'fadeInRight', stagger: true }
+            };
+
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -80px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Animate stats with countUp
+                        if (entry.target.id === 'stats') {
+                            document.querySelectorAll('.stat-value').forEach((stat, idx) => {
+                                if (!stat.hasAttribute('data-animated')) {
+                                    stat.setAttribute('data-animated', 'true');
+                                    setTimeout(() => countUp(stat), idx * 100);
+                                }
+                            });
+                        }
+
+                        // Apply animation to various element types
+                        Object.entries(animationMap).forEach(([selector, config]) => {
+                            if (entry.target.matches(selector) || entry.target.querySelector(selector)) {
+                                const elements = entry.target.matches(selector)
+                                    ? [entry.target]
+                                    : entry.target.querySelectorAll(selector);
+
+                                elements.forEach((el, idx) => {
+                                    if (!el.hasAttribute('data-animated')) {
+                                        el.setAttribute('data-animated', 'true');
+                                        el.style.animation = `${config.animation} 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards`;
+                                        el.style.animationDelay = (config.stagger ? idx * 80 + 'ms' : config.delay + 'ms');
+                                    }
+                                });
+                            }
+                        });
+
+                        // Parallax effect on hero section
+                        if (entry.target.id === 'hero') {
+                            window.addEventListener('scroll', () => {
+                                const scrollY = window.scrollY;
+                                const heroGlow = document.querySelector('.hero-glow');
+                                if (heroGlow && scrollY < window.innerHeight) {
+                                    heroGlow.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.3}px))`;
+                                }
+                            });
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all animated elements
+            Object.keys(animationMap).forEach(selector => {
+                document.querySelectorAll(selector).forEach(el => {
+                    observer.observe(el);
+                });
+            });
+
+            // Observe sections
+            ['hero', 'stats', 'features', 'messages', 'pricing', 'team'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) observer.observe(el);
+            });
+
+            // Parallax mouse movement on cards on hover
+            document.querySelectorAll('.feature-card, .pricing-card, .team-member, .message-card').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    const rotateX = (y - centerY) * 0.1;
+                    const rotateY = (centerX - x) * 0.1;
+
+                    card.style.setProperty('--rotateX', rotateX + 'deg');
+                    card.style.setProperty('--rotateY', rotateY + 'deg');
+                });
+
+                card.addEventListener('mouseleave', () => {
+                    card.style.setProperty('--rotateX', '0deg');
+                    card.style.setProperty('--rotateY', '0deg');
+                });
+            });
+        }
+
+        function countUp(element) {
+            const value = element.getAttribute('data-value');
+            const number = parseInt(value.replace(/\D/g, ''));
+            const duration = 2000;
+            const steps = 60;
+            let current = 0;
+            const increment = number / steps;
+
+            const interval = setInterval(() => {
+                current += increment;
+                if (current >= number) {
+                    element.textContent = value;
+                    clearInterval(interval);
+                } else {
+                    element.textContent = Math.floor(current) + (value.includes('+') ? '+' : value.includes('%') ? '%' : value.includes('yr') ? 'yr' : 'M');
+                }
+            }, duration / steps);
+        }
+
+        function setupNavbarScroll() {
+            const navbar = document.querySelector('nav');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            const heroContent = document.querySelector('.hero-content');
+            const scrollChevron = document.querySelector('.scroll-chevron');
+
+            window.addEventListener('scroll', () => {
+                const scrollY = window.scrollY;
+                const threshold = 80;
+
+                // Navbar background blur effect
+                if (scrollY > threshold) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+
+                // Parallax effect for hero content
+                if (heroContent && scrollY < window.innerHeight) {
+                    heroContent.style.transform = `translateY(${scrollY * 0.4}px)`;
+                    heroContent.style.opacity = Math.max(0.3, 1 - scrollY / window.innerHeight * 0.7);
+                }
+
+                // Fade and move scroll chevron
+                if (scrollChevron && scrollY < window.innerHeight) {
+                    scrollChevron.style.opacity = Math.max(0, 1 - scrollY / (window.innerHeight * 0.5));
+                    scrollChevron.style.transform = `translateY(${scrollY * 0.5}px)`;
+                }
+
+                // Update active nav link
+                let current = '';
+                appData.nav_links.forEach(link => {
+                    const section = document.querySelector(link.href);
+                    if (section && section.offsetTop <= window.scrollY + 100) {
+                        current = link.href;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === current) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // Smooth scroll for nav links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const target = document.querySelector(link.getAttribute('href'));
+                    target?.scrollIntoView({ behavior: 'smooth' });
+                });
+            });
+        }
+
+        function setupParticles() {
+            const background = document.getElementById('hero-background');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animation = `drift ${10 + Math.random() * 10}s linear infinite`;
+                particle.style.animationDelay = Math.random() * 5 + 's';
+                background.appendChild(particle);
+            }
+
+            const style = document.createElement('style');
+            style.textContent = `
+        @keyframes drift {
+          0%, 100% { transform: translate(0, 0); }
+          25% { transform: translate(50px, -50px); }
+          50% { transform: translate(-30px, 30px); }
+          75% { transform: translate(40px, 50px); }
+        }
+      `;
+            document.head.appendChild(style);
+        }
+
+        function setupPricingToggle() {
+            const toggle = document.getElementById('pricing-toggle');
+            toggle.classList.toggle('active', isYearly);
+
+            toggle.addEventListener('click', () => {
+                isYearly = !isYearly;
+                localStorage.setItem('pricing-yearly', isYearly);
+                toggle.classList.toggle('active');
+                renderPricing();
+                setupFAQ();
+            });
+        }
+
+        function setupCarousel() {
+            const dots = document.querySelectorAll('.dot');
+            const carousel = document.getElementById('carousel');
+            let autoplayTimeout;
+
+            function showSlide(index) {
+                currentCarouselIndex = (index + appData.testimonials.length) % appData.testimonials.length;
+                carousel.style.transform = `translateX(-${currentCarouselIndex * 100}%)`;
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentCarouselIndex);
+                });
+            }
+
+            function autoplay() {
+                autoplayTimeout = setTimeout(() => {
+                    showSlide(currentCarouselIndex + 1);
+                    autoplay();
+                }, 5000);
+            }
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearTimeout(autoplayTimeout);
+                    showSlide(index);
+                    autoplay();
+                });
+            });
+
+            carousel.parentElement.addEventListener('mouseenter', () => clearTimeout(autoplayTimeout));
+            carousel.parentElement.addEventListener('mouseleave', autoplay);
+
+            autoplay();
+        }
+
+        function setupFAQ() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+
+                question.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('open');
+
+                    faqItems.forEach(i => i.classList.remove('open'));
+
+                    if (!isOpen) {
+                        item.classList.add('open');
+                        const height = answer.scrollHeight;
+                        answer.style.maxHeight = height + 'px';
+                    }
+                });
+            });
+        }
+
+        function setupContactForm() {
+            const form = document.getElementById('contact-form');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const inputs = form.querySelectorAll('.form-input, .form-select, .form-textarea');
+                let isValid = true;
+
+                inputs.forEach(input => {
+                    const error = input.parentElement.querySelector('.form-error');
+                    if (!input.value.trim()) {
+                        input.classList.add('error');
+                        error?.classList.add('show');
+                        isValid = false;
+                    } else {
+                        input.classList.remove('error');
+                        error?.classList.remove('show');
+                    }
+                });
+
+                if (isValid) {
+                    showToast('Message sent successfully! We\'ll be in touch soon.');
+                    form.reset();
+                }
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.textContent = message;
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.add('fade-out');
+                setTimeout(() => toast.remove(), 400);
+            }, 4000);
+        }
+
+        function setupHamburgerMenu() {
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('nav-links');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '100%';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = 'var(--color-surface)';
+                navLinks.style.borderBottom = '1px solid var(--color-border)';
+                navLinks.style.padding = 'var(--spacing-lg)';
+                navLinks.style.gap = '0';
+
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.style.padding = 'var(--spacing-md) 0';
+                    link.addEventListener('click', () => {
+                        hamburger.classList.remove('active');
+                        navLinks.style.display = 'none';
+                    });
+                });
+            });
+
+            // Close menu on resize
+            window.addEventListener('resize', () => {
+                if (window.innerWidth > 1024) {
+                    hamburger.classList.remove('active');
+                    navLinks.style.display = 'flex';
+                    navLinks.style.position = 'static';
+                    navLinks.style.background = 'transparent';
+                    navLinks.style.border = 'none';
+                    navLinks.style.padding = '0';
+                    navLinks.style.flexDirection = 'row';
+                    navLinks.querySelectorAll('a').forEach(link => {
+                        link.style.padding = 'var(--spacing-sm) 0';
+                    });
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

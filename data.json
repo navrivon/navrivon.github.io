@@ -1,0 +1,266 @@
+{
+  "company": {
+    "name": "Navrivon",
+    "tagline": "Build Smarter. Scale Faster. Deliver More.",
+    "description": "Enterprise-grade software solutions designed to accelerate digital transformation. We empower teams to build, scale, and innovate with confidence.",
+    "email": "hello@navrivon.com",
+    "phone": "+92 300 8889999",
+    "address": "Islamabad, Pakistan",
+    "social": {
+      "twitter": "https://twitter.com/navrivon",
+      "linkedin": "https://linkedin.com/company/navrivon",
+      "github": "https://github.com/navrivon",
+      "instagram": "https://instagram.com/navrivon"
+    }
+  },
+
+  "alerts": [
+    {
+      "id": 1,
+      "type": "info",
+      "title": "New Release",
+      "message": "Navrivon Platform v3.2 is now live with advanced AI-powered analytics and real-time collaboration tools.",
+      "dismissible": true,
+      "active": true,
+      "link": { "text": "Learn more", "url": "#features" }
+    },
+    {
+      "id": 2,
+      "type": "success",
+      "title": "Milestone Reached",
+      "message": "We've onboarded our 500th enterprise client this month. Thank you for your trust!",
+      "dismissible": true,
+      "active": true,
+      "link": { "text": "See success stories", "url": "#testimonials" }
+    },
+    {
+      "id": 3,
+      "type": "warning",
+      "title": "Maintenance Notice",
+      "message": "Scheduled infrastructure maintenance on Friday, Feb 16 from 2-4 AM UTC. Services remain fully operational.",
+      "dismissible": true,
+      "active": true,
+      "link": null
+    }
+  ],
+
+  "messages": [
+    {
+      "id": 1,
+      "from": "Ahmad Raza",
+      "avatar": "assets/team/ceo.jpg",
+      "subject": "Welcome to Navrivon Platform v3",
+      "body": "We're thrilled to introduce our most powerful platform release yet. With AI-driven insights, real-time collaboration, and 10x performance improvements, you're now equipped to tackle enterprise challenges at scale. Our team has worked tirelessly to bring you features that not only meet your needs today but anticipate your tomorrow. Welcome aboard!",
+      "date": "2025-04-20",
+      "pinned": true
+    },
+    {
+      "id": 2,
+      "from": "Zara Khan",
+      "avatar": "assets/team/lead.jpg",
+      "subject": "Q2 Roadmap: What's Coming Next",
+      "body": "We're excited to share what we've been building. This quarter focuses on enhanced security certifications (SOC 2 Type II), expanded API capabilities, and our new developer portal. Your feedback has been invaluable in shaping these priorities.",
+      "date": "2025-04-18",
+      "pinned": false
+    }
+  ],
+
+  "stats": [
+    { "value": "500+", "label": "Enterprise Clients" },
+    { "value": "99.99%", "label": "Platform Uptime" },
+    { "value": "8.5B+", "label": "Transactions Processed" },
+    { "value": "12yr", "label": "Industry Leadership" }
+  ],
+
+  "features": [
+    {
+      "icon": "⚡",
+      "title": "Lightning Fast Performance",
+      "description": "Sub-100ms response times across all API endpoints with global CDN distribution and intelligent caching.",
+      "badge": "Core"
+    },
+    {
+      "icon": "🔒",
+      "title": "Enterprise Security",
+      "description": "Bank-grade encryption, SOC 2 Type II certified, and role-based access control for compliance peace of mind.",
+      "badge": "Security"
+    },
+    {
+      "icon": "🤖",
+      "title": "AI-Powered Analytics",
+      "description": "Machine learning models deliver actionable insights in real-time, helping you make smarter decisions faster.",
+      "badge": "AI"
+    },
+    {
+      "icon": "📊",
+      "title": "Advanced Reporting",
+      "description": "Customizable dashboards, real-time metrics, and automated reports tailored to your exact business needs.",
+      "badge": null
+    },
+    {
+      "icon": "🔗",
+      "title": "Seamless Integration",
+      "description": "Connect with 200+ tools and platforms via webhooks, REST APIs, and pre-built connectors. Built for your stack.",
+      "badge": null
+    },
+    {
+      "icon": "🌍",
+      "title": "Global Infrastructure",
+      "description": "Multi-region deployment with automatic failover ensures your application stays online, always. 99.99% SLA guaranteed.",
+      "badge": null
+    }
+  ],
+
+  "pricing": [
+    {
+      "name": "Starter",
+      "price_monthly": 299,
+      "price_yearly": 2990,
+      "currency": "$",
+      "description": "Perfect for teams just getting started with scalable cloud infrastructure.",
+      "badge": null,
+      "highlighted": false,
+      "cta": "Start Free Trial",
+      "features": [
+        { "text": "Up to 5 projects", "included": true },
+        { "text": "50GB storage", "included": true },
+        { "text": "API access (5K calls/month)", "included": true },
+        { "text": "Email support", "included": true },
+        { "text": "Custom domains", "included": false },
+        { "text": "Advanced analytics", "included": false },
+        { "text": "Dedicated support", "included": false }
+      ]
+    },
+    {
+      "name": "Professional",
+      "price_monthly": 999,
+      "price_yearly": 9990,
+      "currency": "$",
+      "description": "For growing teams that need enterprise features and dedicated support.",
+      "badge": "Most Popular",
+      "highlighted": true,
+      "cta": "Get Started",
+      "features": [
+        { "text": "Unlimited projects", "included": true },
+        { "text": "500GB storage", "included": true },
+        { "text": "API access (500K calls/month)", "included": true },
+        { "text": "Priority email & chat support", "included": true },
+        { "text": "Custom domains", "included": true },
+        { "text": "Advanced analytics & AI insights", "included": true },
+        { "text": "Team management", "included": false }
+      ]
+    },
+    {
+      "name": "Enterprise",
+      "price_monthly": null,
+      "price_yearly": null,
+      "currency": "$",
+      "description": "Custom solutions with unlimited capabilities and dedicated success management for large organizations.",
+      "badge": "Custom",
+      "highlighted": false,
+      "cta": "Contact Sales",
+      "features": [
+        { "text": "Unlimited everything", "included": true },
+        { "text": "Dedicated storage tier", "included": true },
+        { "text": "Unlimited API calls", "included": true },
+        { "text": "24/7 dedicated support", "included": true },
+        { "text": "Custom domains & branding", "included": true },
+        { "text": "Full advanced analytics suite", "included": true },
+        { "text": "Dedicated success manager & SLA guarantee", "included": true }
+      ]
+    }
+  ],
+
+  "testimonials": [
+    {
+      "name": "Sarah Johnson",
+      "role": "VP Engineering at TechFlow",
+      "avatar": "assets/team/t1.jpg",
+      "rating": 5,
+      "text": "Navrivon transformed our infrastructure. We reduced deployment time from hours to minutes. The platform is intuitive, powerful, and their support team is exceptional."
+    },
+    {
+      "name": "Marcus Chen",
+      "role": "CTO at DataSync Inc",
+      "avatar": "assets/team/t2.jpg",
+      "rating": 5,
+      "text": "The AI-powered analytics give us insights we never had before. We've cut our operational costs by 40% while improving reliability. Best decision we made all year."
+    },
+    {
+      "name": "Priya Sharma",
+      "role": "Founder at CloudStart",
+      "avatar": "assets/team/t3.jpg",
+      "rating": 5,
+      "text": "As a startup, we needed a platform we could trust. Navrivon delivered enterprise-grade reliability without the enterprise complexity. Their pricing is fair and transparent."
+    },
+    {
+      "name": "Alex Rodriguez",
+      "role": "Head of DevOps at GlobalTech",
+      "avatar": "assets/team/t4.jpg",
+      "rating": 5,
+      "text": "The API integration was seamless. Within 48 hours, we had everything connected. The documentation is world-class, and when we needed help, the response time was incredible."
+    }
+  ],
+
+  "team": [
+    {
+      "name": "Ahmad Raza",
+      "role": "Founder & CEO",
+      "photo": "assets/team/ceo.jpg",
+      "linkedin": "https://linkedin.com/in/ahmadrazapk",
+      "bio": "15+ years in enterprise software. Built and scaled systems serving millions. Passionate about making complex infrastructure accessible."
+    },
+    {
+      "name": "Zara Khan",
+      "role": "CTO & Co-founder",
+      "photo": "assets/team/cto.jpg",
+      "linkedin": "https://linkedin.com/in/zarakhan",
+      "bio": "PhD in Distributed Systems. Previously led infrastructure at major cloud provider. Obsessed with performance and reliability."
+    },
+    {
+      "name": "James Mitchell",
+      "role": "VP Product",
+      "photo": "assets/team/vp-product.jpg",
+      "linkedin": "https://linkedin.com/in/jamesmitchell",
+      "bio": "Serial entrepreneur with 3 successful exits. Believes great products are built by listening to customers and shipping fearlessly."
+    },
+    {
+      "name": "Lisa Chen",
+      "role": "Head of Design",
+      "photo": "assets/team/head-design.jpg",
+      "linkedin": "https://linkedin.com/in/lisachen",
+      "bio": "Design leader from award-winning tech studios. Advocates for accessibility and intuitive user experiences for complex tools."
+    }
+  ],
+
+  "faqs": [
+    {
+      "question": "Is there a free trial? Do I need a credit card?",
+      "answer": "Yes! All plans include a 14-day free trial with full feature access. No credit card required to get started. When your trial ends, you choose to upgrade, downgrade, or cancel anytime."
+    },
+    {
+      "question": "How does the monthly vs. yearly pricing work?",
+      "answer": "Choose your billing cycle at checkout. Yearly plans include 20% savings compared to monthly billing. Your renewal date is one year from the purchase date. You can switch between plans anytime with prorated billing."
+    },
+    {
+      "question": "What's included in API access limits?",
+      "answer": "API calls include all read and write operations (GET, POST, PUT, DELETE). Starter includes 5K calls/month, Professional includes 500K/month. Enterprise plans have unlimited API calls. Rate limits are applied to prevent abuse but don't affect normal usage patterns."
+    },
+    {
+      "question": "Can I upgrade or downgrade my plan?",
+      "answer": "Absolutely. Upgrade anytime to access more features. Downgrading is also allowed—if you have data that exceeds the lower plan's limits, we'll notify you and help you manage the transition smoothly."
+    },
+    {
+      "question": "Do you offer SSO and custom integrations?",
+      "answer": "SSO (SAML/OAuth) is available on Professional and Enterprise plans. Custom integrations are available for Enterprise customers. Talk to our sales team to discuss your specific security and integration requirements."
+    }
+  ],
+
+  "nav_links": [
+    { "label": "Home", "href": "#hero" },
+    { "label": "Features", "href": "#features" },
+    { "label": "Pricing", "href": "#pricing" },
+    { "label": "Team", "href": "#team" },
+    { "label": "Contact", "href": "#contact" }
+  ]
+}
