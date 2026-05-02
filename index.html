@@ -403,6 +403,7 @@
           </div>
         `)
                 .join('');
+            setupCardCollapse('features-grid', 3);
         }
 
         function renderOfferings() {
@@ -416,6 +417,7 @@
           </div>
         `)
                 .join('');
+            setupCardCollapse('offerings-grid', 3);
         }
 
         function renderTestimonials() {
@@ -457,6 +459,44 @@
           </div>
         `)
                 .join('');
+            setupCardCollapse('team-grid', 3);
+        }
+
+        function setupCardCollapse(gridId, visibleCount = 3) {
+            const grid = document.getElementById(gridId);
+            if (!grid || !grid.parentElement) return;
+
+            const cards = Array.from(grid.children);
+            const existingToggle = grid.parentElement.querySelector(`.collapse-toggle[data-target="${gridId}"]`);
+            if (existingToggle) existingToggle.remove();
+
+            if (cards.length <= visibleCount) return;
+
+            cards.forEach((card, index) => {
+                if (index >= visibleCount) {
+                    card.classList.add('is-collapsed-card');
+                } else {
+                    card.classList.remove('is-collapsed-card');
+                }
+            });
+
+            const toggleBtn = document.createElement('button');
+            toggleBtn.type = 'button';
+            toggleBtn.className = 'collapse-toggle';
+            toggleBtn.dataset.target = gridId;
+            toggleBtn.textContent = 'Show More';
+
+            toggleBtn.addEventListener('click', () => {
+                const expanded = toggleBtn.classList.toggle('expanded');
+                cards.forEach((card, index) => {
+                    if (index >= visibleCount) {
+                        card.classList.toggle('is-collapsed-card', !expanded);
+                    }
+                });
+                toggleBtn.textContent = expanded ? 'Show Less' : 'Show More';
+            });
+
+            grid.parentElement.appendChild(toggleBtn);
         }
 
         function renderContact() {
