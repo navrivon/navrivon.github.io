@@ -58,11 +58,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.5px;
+  overflow-wrap: anywhere;
 }
 
-h1 { font-size: 72px; }
-h2 { font-size: 48px; }
-h3 { font-size: 32px; }
+h1 { font-size: clamp(34px, 8vw, 72px); }
+h2 { font-size: clamp(26px, 5vw, 48px); }
+h3 { font-size: clamp(20px, 3vw, 32px); }
 h4 { font-size: 24px; }
 h5 { font-size: 18px; }
 h6 { font-size: 16px; }
@@ -448,10 +449,10 @@ nav.scrolled {
 }
 
 .nav-logo img {
-  max-height: 100px;
-  height: 100px;
+  max-height: 56px;
+  height: 56px;
   object-fit: contain;
-  transform: scale(1.15);
+  transform: none;
 }
 
 .nav-logo-text {
@@ -576,7 +577,7 @@ nav.scrolled {
 }
 
 .hero-headline {
-  font-size: 72px;
+  font-size: clamp(34px, 8vw, 72px);
   font-weight: 800;
   line-height: 1.2;
   margin-bottom: var(--spacing-lg);
@@ -745,7 +746,7 @@ nav.scrolled {
 }
 
 .section-title {
-  font-size: 48px;
+  font-size: clamp(26px, 5vw, 48px);
   margin-bottom: var(--spacing-md);
 }
 
@@ -1310,7 +1311,7 @@ nav.scrolled {
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--spacing-2xl);
   margin-top: var(--spacing-2xl);
   perspective: 1000px;
@@ -1709,10 +1710,6 @@ footer {
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 1024px) {
-  h1 { font-size: 56px; }
-  h2 { font-size: 40px; }
-  h3 { font-size: 28px; }
-
   .nav-links {
     display: none;
   }
@@ -1721,13 +1718,8 @@ footer {
     display: flex;
   }
 
-  .hero-headline {
-    font-size: 56px;
-  }
-
   .features-grid,
   .offerings-grid,
-  .pricing-cards,
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1763,14 +1755,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  h1 { font-size: 40px; }
-  h2 { font-size: 32px; }
-  h3 { font-size: 24px; }
-
-  .hero-headline {
-    font-size: 40px;
-  }
-
   .hero-buttons {
     flex-direction: column;
   }
@@ -1785,13 +1769,8 @@ footer {
 
   .features-grid,
   .offerings-grid,
-  .pricing-cards,
   .team-grid {
     grid-template-columns: 1fr;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
   }
 
   .contact-container {
@@ -1811,13 +1790,7 @@ footer {
     flex-direction: column;
   }
 
-  .pricing-card.highlighted {
-    transform: scale(1);
-  }
-
-  .stats-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .stats-container { grid-template-columns: 1fr; }
 
   .hero-glow {
     width: 300px;
@@ -1842,16 +1815,8 @@ footer {
 }
 
 @media (max-width: 480px) {
-  h1 { font-size: 32px; }
-  h2 { font-size: 24px; }
-  h3 { font-size: 20px; }
-
   body {
     font-size: 14px;
-  }
-
-  .hero-headline {
-    font-size: 32px;
   }
 
   .hero-subheadline {
@@ -1876,7 +1841,8 @@ footer {
   }
 
   .nav-logo img {
-    max-height: 32px;
+    max-height: 36px;
+    height: 36px;
   }
 
   .section-header {
@@ -1884,7 +1850,6 @@ footer {
   }
 
   .features-grid,
-  .pricing-cards,
   .team-grid,
   .stats-container {
     grid-template-columns: 1fr;
@@ -1893,14 +1858,6 @@ footer {
 
   .team-grid {
     grid-template-columns: 1fr;
-  }
-
-  .pricing-toggle-container {
-    gap: var(--spacing-md);
-  }
-
-  .pricing-price {
-    font-size: 36px;
   }
 
   .stat-item {
