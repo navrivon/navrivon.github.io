@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Navrivon - Enterprise-grade software solutions for digital transformation">
+    <meta name="description" content="Navrivon - Custom software development agency for web, mobile, SaaS, APIs, WordPress, and Shopify solutions">
     <meta name="theme-color" content="#0d0d0d">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -19,7 +19,7 @@
     <link rel="android-chrome-icon" sizes="512x512" href="assets/favicon/android-chrome-512x512.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
 
-    <title>Navrivon - Enterprise Software Solutions</title>
+    <title>Navrivon - Custom Software, Web & Mobile Development</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -59,8 +59,8 @@
             <p class="hero-subheadline" id="hero-subheadline"></p>
             <div class="hero-buttons">
                 <button class="btn btn-primary"
-                    onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">Start Free
-                    Trial</button>
+                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start
+                    Project</button>
                 <button class="btn btn-secondary" onclick="alert('Demo video coming soon!')">Watch Demo</button>
             </div>
             <p class="hero-trust">Trusted by <strong id="hero-trust-count"></strong></p>
@@ -84,6 +84,17 @@
             <p class="section-subtitle">Powerful tools designed for modern development teams</p>
         </div>
         <div class="features-grid" id="features-grid"></div>
+    </section>
+
+    <!-- OFFERINGS SECTION -->
+    <section id="offerings">
+        <div class="offerings-container">
+            <div class="section-header">
+                <h2 class="section-title">Software Development Offerings</h2>
+                <p class="section-subtitle">End-to-end services for startups, SMBs, and enterprise teams</p>
+            </div>
+            <div class="offerings-grid" id="offerings-grid"></div>
+        </div>
     </section>
 
     <!-- HOW IT WORKS SECTION -->
@@ -110,36 +121,6 @@
                     <p class="step-description">Deploy with confidence and scale effortlessly</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- MESSAGES SECTION -->
-    <section id="messages">
-        <div class="messages-container">
-            <div class="section-header">
-                <h2 class="section-title">Latest from our team</h2>
-                <p class="section-subtitle">Updates and insights from Navrivon leadership</p>
-            </div>
-            <div class="messages-grid" id="messages-grid"></div>
-        </div>
-    </section>
-
-    <!-- PRICING SECTION -->
-    <section id="pricing">
-        <div class="pricing-container">
-            <div class="section-header">
-                <h2 class="section-title">Simple, transparent pricing</h2>
-                <p class="section-subtitle">Choose the perfect plan for your business</p>
-            </div>
-            <div class="pricing-toggle-container">
-                <span class="toggle-label" id="monthly-label">Monthly</span>
-                <div class="toggle" id="pricing-toggle">
-                    <div class="toggle-slider"></div>
-                </div>
-                <span class="toggle-label" id="yearly-label">Yearly</span>
-            </div>
-            <div class="pricing-cards" id="pricing-cards"></div>
-            <div class="faqs-container" id="faqs-container"></div>
         </div>
     </section>
 
@@ -175,11 +156,11 @@
                 <h2 class="section-title">Get in touch</h2>
                 <div class="contact-info-item">
                     <div class="contact-info-label">Email</div>
-                    <a href="mailto:hello@navrivon.com" class="contact-info-value" id="contact-email"></a>
+                    <a href="mailto:info@navrivon.com" class="contact-info-value" id="contact-email"></a>
                 </div>
                 <div class="contact-info-item">
                     <div class="contact-info-label">Phone</div>
-                    <a href="tel:+923008889999" class="contact-info-value" id="contact-phone"></a>
+                    <a href="tel:+923165118136" class="contact-info-value" id="contact-phone"></a>
                 </div>
                 <div class="contact-info-item">
                     <div class="contact-info-label">Address</div>
@@ -232,12 +213,13 @@
                         </div>
                     </div>
                     <div class="footer-social" id="footer-social"></div>
+                    <div class="footer-contact" id="footer-contact"></div>
                 </div>
                 <div class="footer-section">
                     <h4>Product</h4>
                     <div class="footer-links">
                         <a href="#features">Features</a>
-                        <a href="#pricing">Pricing</a>
+                        <a href="#offerings">Offerings</a>
                         <a href="#">Security</a>
                         <a href="#">Status</a>
                     </div>
@@ -276,7 +258,6 @@
         // ===== APPLICATION STATE =====
         let appData = {};
         let currentCarouselIndex = 0;
-        let isYearly = localStorage.getItem('pricing-yearly') === 'true';
         const dismissedAlerts = JSON.parse(localStorage.getItem('dismissed-alerts') || '[]');
 
         // ===== INITIALIZATION =====
@@ -292,8 +273,7 @@
                 renderHero();
                 renderStats();
                 renderFeatures();
-                renderMessages();
-                renderPricing();
+                renderOfferings();
                 renderTestimonials();
                 renderTeam();
                 renderContact();
@@ -303,7 +283,6 @@
                 setupScrollAnimations();
                 setupNavbarScroll();
                 setupParticles();
-                setupPricingToggle();
                 setupCarousel();
                 setupFAQ();
                 setupContactForm();
@@ -380,7 +359,7 @@
             featuresGrid.innerHTML = appData.features
                 .map((feature, idx) => `
           <div class="feature-card" data-aos="zoomInUp" style="animation-delay: ${idx * 80}ms">
-            <span class="feature-icon">${feature.icon}</span>
+            <img src="${feature.icon}" alt="${feature.title} icon" class="feature-icon-img" loading="lazy" onerror="this.onerror=null;this.src='assets/logo/favicon.png';">
             <h3 class="feature-title">${feature.title}</h3>
             <p class="feature-description">${feature.description}</p>
             ${feature.badge ? `<span class="feature-badge">${feature.badge}</span>` : ''}
@@ -389,81 +368,17 @@
                 .join('');
         }
 
-        function renderMessages() {
-            const messagesGrid = document.getElementById('messages-grid');
-            const sorted = [...appData.messages].sort((a, b) => b.pinned - a.pinned);
-
-            messagesGrid.innerHTML = sorted
-                .map((message, idx) => `
-          <div class="message-card" data-aos="flipInX" style="animation-delay: ${idx * 80}ms">
-            <div class="message-header">
-              <img src="${message.avatar}" alt="${message.from}" class="message-avatar" loading="lazy">
-              <div class="message-info">
-                <div class="message-name">${message.from}</div>
-              </div>
-              ${message.pinned ? '<span class="message-pin">📌</span>' : ''}
-            </div>
-            <div class="message-subject">${message.subject}</div>
-            <div class="message-body">${message.body}</div>
-            <div class="message-date">${new Date(message.date).toLocaleDateString()}</div>
+        function renderOfferings() {
+            const offeringsGrid = document.getElementById('offerings-grid');
+            offeringsGrid.innerHTML = appData.offerings
+                .map((service, idx) => `
+          <div class="offering-card" data-aos="fadeInUp" style="animation-delay: ${idx * 70}ms">
+            <img src="${service.icon}" alt="${service.title} logo" class="offering-icon-img" loading="lazy" onerror="this.onerror=null;this.src='assets/logo/favicon.png';">
+            <h3 class="offering-title">${service.title}</h3>
+            <p class="offering-description">${service.description}</p>
           </div>
         `)
                 .join('');
-        }
-
-        function renderPricing() {
-            const pricingCards = document.getElementById('pricing-cards');
-            pricingCards.innerHTML = appData.pricing
-                .map((plan, idx) => {
-                    const price = isYearly ? plan.price_yearly : plan.price_monthly;
-                    const period = isYearly ? '/year' : '/month';
-                    const savings = isYearly && plan.price_yearly ? ' Save 25%' : '';
-
-                    return `
-            <div class="pricing-card ${plan.highlighted ? 'highlighted' : ''}" data-aos="fadeInUp" style="animation-delay: ${idx * 80}ms">
-              ${plan.badge ? `<div class="pricing-badge">${plan.badge}</div>` : ''}
-              <h3 class="pricing-name">${plan.name}</h3>
-              <div class="pricing-price">
-                ${price !== null ? `
-                  <span>${plan.currency}</span>
-                  <span>${price}</span>
-                  <span class="pricing-price-period">${period}</span>
-                  ${savings ? `<span class="pricing-yearly-save">${savings}</span>` : ''}
-                ` : '<span>Custom</span>'}
-              </div>
-              <p class="pricing-description">${plan.description}</p>
-              <div class="pricing-features">
-                ${plan.features
-                            .map(feature => `
-                    <div class="pricing-feature ${feature.included ? 'included' : ''}">
-                      <span class="pricing-feature-check">${feature.included ? '✓' : '✗'}</span>
-                      <span class="pricing-feature-text">${feature.text}</span>
-                    </div>
-                  `)
-                            .join('')}
-              </div>
-              <button class="pricing-cta" onclick="alert('${plan.cta}'); document.getElementById('contact-form').scrollIntoView({behavior:\'smooth\'})">${plan.cta}</button>
-            </div>
-          `;
-                })
-                .join('');
-
-            // Render FAQs
-            const faqsContainer = document.getElementById('faqs-container');
-            faqsContainer.innerHTML = `
-        <h3 class="section-title" style="text-align: center; margin-top: var(--spacing-3xl); margin-bottom: var(--spacing-2xl); font-size: 28px;">Frequently Asked Questions</h3>
-        ${appData.faqs
-                    .map((faq, idx) => `
-            <div class="faq-item" data-faq="${idx}">
-              <div class="faq-question">
-                ${faq.question}
-                <span class="faq-toggle">⌄</span>
-              </div>
-              <div class="faq-answer">${faq.answer}</div>
-            </div>
-          `)
-                    .join('')}
-      `;
         }
 
         function renderTestimonials() {
@@ -502,9 +417,6 @@
             <h3 class="team-name">${member.name}</h3>
             <div class="team-role">${member.role}</div>
             <p class="team-bio">${member.bio}</p>
-            <div class="team-social">
-              <a href="${member.linkedin}" target="_blank" rel="noopener" title="LinkedIn">in</a>
-            </div>
           </div>
         `)
                 .join('');
@@ -512,27 +424,48 @@
 
         function renderContact() {
             document.getElementById('contact-email').textContent = appData.company.email;
+            document.getElementById('contact-email').href = `mailto:${appData.company.email}`;
             document.getElementById('contact-phone').textContent = appData.company.phone;
+            document.getElementById('contact-phone').href = `tel:${appData.company.phone.replace(/\s+/g, '')}`;
             document.getElementById('contact-address').textContent = appData.company.address;
 
+            const socialLinks = [
+                { key: 'instagram', label: 'Instagram', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/instagram.svg' },
+                { key: 'linkedin', label: 'LinkedIn', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/linkedin.svg' },
+                { key: 'facebook', label: 'Facebook', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/facebook.svg' },
+                { key: 'github', label: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/github.svg' }
+            ];
+
             const contactSocial = document.getElementById('contact-social');
-            contactSocial.innerHTML = `
-        <a href="${appData.company.social.twitter}" target="_blank" rel="noopener" title="Twitter">𝕏</a>
-        <a href="${appData.company.social.linkedin}" target="_blank" rel="noopener" title="LinkedIn">in</a>
-        <a href="${appData.company.social.github}" target="_blank" rel="noopener" title="GitHub">⚙</a>
-        <a href="${appData.company.social.instagram}" target="_blank" rel="noopener" title="Instagram">📷</a>
-      `;
+            contactSocial.innerHTML = socialLinks
+                .map((social) => `
+        <a href="${appData.company.social[social.key]}" target="_blank" rel="noopener noreferrer" title="${social.label}" aria-label="${social.label}">
+          <img src="${social.icon}" alt="${social.label}" class="social-icon-img" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/simple-icons@11/icons/${social.key}.svg';">
+        </a>
+      `)
+                .join('');
         }
 
         function renderFooter() {
             document.getElementById('footer-tagline').textContent = appData.company.tagline;
-            const footerSocial = document.getElementById('footer-social');
-            footerSocial.innerHTML = `
-        <a href="${appData.company.social.twitter}" target="_blank" rel="noopener" title="Twitter">𝕏</a>
-        <a href="${appData.company.social.linkedin}" target="_blank" rel="noopener" title="LinkedIn">in</a>
-        <a href="${appData.company.social.github}" target="_blank" rel="noopener" title="GitHub">⚙</a>
-        <a href="${appData.company.social.instagram}" target="_blank" rel="noopener" title="Instagram">📷</a>
+            document.getElementById('footer-contact').innerHTML = `
+        <a href="mailto:${appData.company.email}">${appData.company.email}</a>
+        <a href="tel:${appData.company.phone.replace(/\s+/g, '')}">${appData.company.phone}</a>
       `;
+            const socialLinks = [
+                { key: 'instagram', label: 'Instagram', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/instagram.svg' },
+                { key: 'linkedin', label: 'LinkedIn', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/linkedin.svg' },
+                { key: 'facebook', label: 'Facebook', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/facebook.svg' },
+                { key: 'github', label: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/github.svg' }
+            ];
+            const footerSocial = document.getElementById('footer-social');
+            footerSocial.innerHTML = socialLinks
+                .map((social) => `
+        <a href="${appData.company.social[social.key]}" target="_blank" rel="noopener noreferrer" title="${social.label}" aria-label="${social.label}">
+          <img src="${social.icon}" alt="${social.label}" class="social-icon-img" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/simple-icons@11/icons/${social.key}.svg';">
+        </a>
+      `)
+                .join('');
         }
 
         // ===== INTERACTION SETUP =====
@@ -541,8 +474,7 @@
             const animationMap = {
                 '.section-header': { animation: 'fadeInUp', delay: 0 },
                 '.feature-card': { animation: 'zoomInUp', stagger: true },
-                '.message-card': { animation: 'flipInX', stagger: true },
-                '.pricing-card': { animation: 'fadeInUp', stagger: true },
+                '.offering-card': { animation: 'fadeInUp', stagger: true },
                 '.team-member': { animation: 'rotateIn', stagger: true },
                 '.stat-item': { animation: 'fadeInUp', stagger: true },
                 '.step': { animation: 'fadeInLeft', stagger: true },
@@ -607,13 +539,13 @@
             });
 
             // Observe sections
-            ['hero', 'stats', 'features', 'messages', 'pricing', 'team'].forEach(id => {
+            ['hero', 'stats', 'features', 'offerings', 'team'].forEach(id => {
                 const el = document.getElementById(id);
                 if (el) observer.observe(el);
             });
 
             // Parallax mouse movement on cards on hover
-            document.querySelectorAll('.feature-card, .pricing-card, .team-member, .message-card').forEach(card => {
+            document.querySelectorAll('.feature-card, .offering-card, .team-member').forEach(card => {
                 card.addEventListener('mousemove', (e) => {
                     const rect = card.getBoundingClientRect();
                     const x = e.clientX - rect.left;
@@ -735,19 +667,6 @@
             document.head.appendChild(style);
         }
 
-        function setupPricingToggle() {
-            const toggle = document.getElementById('pricing-toggle');
-            toggle.classList.toggle('active', isYearly);
-
-            toggle.addEventListener('click', () => {
-                isYearly = !isYearly;
-                localStorage.setItem('pricing-yearly', isYearly);
-                toggle.classList.toggle('active');
-                renderPricing();
-                setupFAQ();
-            });
-        }
-
         function setupCarousel() {
             const dots = document.querySelectorAll('.dot');
             const carousel = document.getElementById('carousel');
@@ -825,7 +744,24 @@
                 });
 
                 if (isValid) {
-                    showToast('Message sent successfully! We\'ll be in touch soon.');
+                    const formData = new FormData(form);
+                    const name = (formData.get('name') || '').toString().trim();
+                    const email = (formData.get('email') || '').toString().trim();
+                    const subject = (formData.get('subject') || '').toString().trim();
+                    const message = (formData.get('message') || '').toString().trim();
+                    const whatsappNumber = (appData.company.phone || '').replace(/\D/g, '');
+                    const whatsappText = [
+                        'New Website Inquiry',
+                        '',
+                        `Name: ${name}`,
+                        `Email: ${email}`,
+                        `Subject: ${subject}`,
+                        `Message: ${message}`
+                    ].join('\n');
+                    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+
+                    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+                    showToast('Redirecting to WhatsApp with your message...');
                     form.reset();
                 }
             });

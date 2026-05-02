@@ -1,19 +1,18 @@
 {
   "company": {
     "name": "Navrivon",
-    "tagline": "Build Smarter. Scale Faster. Deliver More.",
-    "description": "Enterprise-grade software solutions designed to accelerate digital transformation. We empower teams to build, scale, and innovate with confidence.",
-    "email": "hello@navrivon.com",
-    "phone": "+92 300 8889999",
+    "tagline": "Custom Software That Moves Your Business Forward.",
+    "description": "We design and build high-performance software products for startups and growing businesses, from custom websites and mobile apps to SaaS platforms, APIs, and eCommerce systems.",
+    "email": "info@navrivon.com",
+    "phone": "+92 316 5118136",
     "address": "Islamabad, Pakistan",
     "social": {
-      "twitter": "https://twitter.com/navrivon",
+      "facebook": "https://facebook.com/navrivon",
       "linkedin": "https://linkedin.com/company/navrivon",
       "github": "https://github.com/navrivon",
       "instagram": "https://instagram.com/navrivon"
     }
   },
-
   "alerts": [
     {
       "id": 1,
@@ -22,7 +21,10 @@
       "message": "Navrivon Platform v3.2 is now live with advanced AI-powered analytics and real-time collaboration tools.",
       "dismissible": true,
       "active": true,
-      "link": { "text": "Learn more", "url": "#features" }
+      "link": {
+        "text": "Learn more",
+        "url": "#features"
+      }
     },
     {
       "id": 2,
@@ -31,7 +33,10 @@
       "message": "We've onboarded our 500th enterprise client this month. Thank you for your trust!",
       "dismissible": true,
       "active": true,
-      "link": { "text": "See success stories", "url": "#testimonials" }
+      "link": {
+        "text": "See success stories",
+        "url": "#testimonials"
+      }
     },
     {
       "id": 3,
@@ -43,196 +48,174 @@
       "link": null
     }
   ],
-
-  "messages": [
+  "stats": [
     {
-      "id": 1,
-      "from": "Ahmad Raza",
-      "avatar": "assets/team/ceo.jpg",
-      "subject": "Welcome to Navrivon Platform v3",
-      "body": "We're thrilled to introduce our most powerful platform release yet. With AI-driven insights, real-time collaboration, and 10x performance improvements, you're now equipped to tackle enterprise challenges at scale. Our team has worked tirelessly to bring you features that not only meet your needs today but anticipate your tomorrow. Welcome aboard!",
-      "date": "2025-04-20",
-      "pinned": true
+      "value": "35+",
+      "label": "Enterprise Clients"
     },
     {
-      "id": 2,
-      "from": "Zara Khan",
-      "avatar": "assets/team/lead.jpg",
-      "subject": "Q2 Roadmap: What's Coming Next",
-      "body": "We're excited to share what we've been building. This quarter focuses on enhanced security certifications (SOC 2 Type II), expanded API capabilities, and our new developer portal. Your feedback has been invaluable in shaping these priorities.",
-      "date": "2025-04-18",
-      "pinned": false
+      "value": "99.99%",
+      "label": "Platform Uptime"
+    },
+    {
+      "value": "1.5M+",
+      "label": "Transactions Processed"
+    },
+    {
+      "value": "5yr+",
+      "label": "Industry Leadership"
     }
   ],
-
-  "stats": [
-    { "value": "500+", "label": "Enterprise Clients" },
-    { "value": "99.99%", "label": "Platform Uptime" },
-    { "value": "8.5B+", "label": "Transactions Processed" },
-    { "value": "12yr", "label": "Industry Leadership" }
-  ],
-
   "features": [
     {
-      "icon": "⚡",
+      "icon": "https://cdn.simpleicons.org/cloudflare/f38020",
       "title": "Lightning Fast Performance",
       "description": "Sub-100ms response times across all API endpoints with global CDN distribution and intelligent caching.",
       "badge": "Core"
     },
     {
-      "icon": "🔒",
+      "icon": "https://cdn.simpleicons.org/letsencrypt/003A70",
       "title": "Enterprise Security",
       "description": "Bank-grade encryption, SOC 2 Type II certified, and role-based access control for compliance peace of mind.",
       "badge": "Security"
     },
     {
-      "icon": "🤖",
+      "icon": "https://cdn.simpleicons.org/tensorflow/FF6F00",
       "title": "AI-Powered Analytics",
       "description": "Machine learning models deliver actionable insights in real-time, helping you make smarter decisions faster.",
       "badge": "AI"
     },
     {
-      "icon": "📊",
+      "icon": "https://cdn.simpleicons.org/googleanalytics/E37400",
       "title": "Advanced Reporting",
       "description": "Customizable dashboards, real-time metrics, and automated reports tailored to your exact business needs.",
       "badge": null
     },
     {
-      "icon": "🔗",
+      "icon": "https://cdn.simpleicons.org/postman/FF6C37",
       "title": "Seamless Integration",
       "description": "Connect with 200+ tools and platforms via webhooks, REST APIs, and pre-built connectors. Built for your stack.",
       "badge": null
     },
     {
-      "icon": "🌍",
+      "icon": "https://cdn.simpleicons.org/googlecloud/4285F4",
       "title": "Global Infrastructure",
       "description": "Multi-region deployment with automatic failover ensures your application stays online, always. 99.99% SLA guaranteed.",
       "badge": null
     }
   ],
-
-  "pricing": [
+  "offerings": [
     {
-      "name": "Starter",
-      "price_monthly": 299,
-      "price_yearly": 2990,
-      "currency": "$",
-      "description": "Perfect for teams just getting started with scalable cloud infrastructure.",
-      "badge": null,
-      "highlighted": false,
-      "cta": "Start Free Trial",
-      "features": [
-        { "text": "Up to 5 projects", "included": true },
-        { "text": "50GB storage", "included": true },
-        { "text": "API access (5K calls/month)", "included": true },
-        { "text": "Email support", "included": true },
-        { "text": "Custom domains", "included": false },
-        { "text": "Advanced analytics", "included": false },
-        { "text": "Dedicated support", "included": false }
-      ]
+      "icon": "https://cdn.simpleicons.org/html5/E34F26",
+      "title": "Custom Web Development",
+      "description": "Tailored business websites and web applications built for performance, security, and conversion."
     },
     {
-      "name": "Professional",
-      "price_monthly": 999,
-      "price_yearly": 9990,
-      "currency": "$",
-      "description": "For growing teams that need enterprise features and dedicated support.",
-      "badge": "Most Popular",
-      "highlighted": true,
-      "cta": "Get Started",
-      "features": [
-        { "text": "Unlimited projects", "included": true },
-        { "text": "500GB storage", "included": true },
-        { "text": "API access (500K calls/month)", "included": true },
-        { "text": "Priority email & chat support", "included": true },
-        { "text": "Custom domains", "included": true },
-        { "text": "Advanced analytics & AI insights", "included": true },
-        { "text": "Team management", "included": false }
-      ]
+      "icon": "https://cdn.simpleicons.org/flutter/02569B",
+      "title": "Mobile App Development",
+      "description": "Native and cross-platform iOS and Android apps with clean UX and scalable architecture."
     },
     {
-      "name": "Enterprise",
-      "price_monthly": null,
-      "price_yearly": null,
-      "currency": "$",
-      "description": "Custom solutions with unlimited capabilities and dedicated success management for large organizations.",
-      "badge": "Custom",
-      "highlighted": false,
-      "cta": "Contact Sales",
-      "features": [
-        { "text": "Unlimited everything", "included": true },
-        { "text": "Dedicated storage tier", "included": true },
-        { "text": "Unlimited API calls", "included": true },
-        { "text": "24/7 dedicated support", "included": true },
-        { "text": "Custom domains & branding", "included": true },
-        { "text": "Full advanced analytics suite", "included": true },
-        { "text": "Dedicated success manager & SLA guarantee", "included": true }
-      ]
+      "icon": "https://cdn.simpleicons.org/wordpress/21759B",
+      "title": "WordPress Development",
+      "description": "Custom WordPress websites, theme builds, plugin integrations, and speed optimization."
+    },
+    {
+      "icon": "https://cdn.simpleicons.org/shopify/95BF47",
+      "title": "Shopify Development",
+      "description": "Shopify stores, custom themes, app integrations, and conversion-focused eCommerce experiences."
+    },
+    {
+      "icon": "https://cdn.simpleicons.org/saas/FF6B6B",
+      "title": "SaaS Product Development",
+      "description": "End-to-end SaaS design and engineering, including multi-tenant systems, billing, and analytics."
+    },
+    {
+      "icon": "https://cdn.simpleicons.org/fastapi/009688",
+      "title": "API Development & Integration",
+      "description": "REST/GraphQL API design, third-party integration, and secure backend service development."
+    },
+    {
+      "icon": "https://cdn.simpleicons.org/react/61DAFB",
+      "title": "Custom Web Applications",
+      "description": "Internal tools, admin portals, and workflow systems that automate operations and reduce manual work."
+    },
+    {
+      "icon": "https://cdn.simpleicons.org/figma/F24E1E",
+      "title": "UI/UX Design",
+      "description": "User research, wireframes, prototypes, and polished interfaces that improve engagement."
+    },
+    {
+      "icon": "https://cdn.simpleicons.org/vercel/ffffff",
+      "title": "MVP Development",
+      "description": "Rapid MVP delivery to validate product ideas fast with a clear roadmap for scaling."
+    },
+    {
+      "icon": "https://cdn.simpleicons.org/sentry/362D59",
+      "title": "Software Maintenance & Support",
+      "description": "Continuous upgrades, bug fixes, monitoring, and technical support to keep systems reliable."
+    },
+    {
+      "icon": "https://cdn.simpleicons.org/huggingface/FFD21E",
+      "title": "AI & Automation Solutions",
+      "description": "Smart automations, AI-assisted workflows, and data-driven tooling to increase team productivity."
+    },
+    {
+      "icon": "https://cdn.simpleicons.org/cypress/69D3A7",
+      "title": "QA & Performance Testing",
+      "description": "Manual and automated testing, load testing, and quality assurance pipelines for stable releases."
     }
   ],
-
   "testimonials": [
     {
-      "name": "Sarah Johnson",
-      "role": "VP Engineering at TechFlow",
-      "avatar": "assets/team/t1.jpg",
+      "name": "Ayesha Malik",
+      "role": "Product Manager at BrightLoop",
+      "avatar": "https://api.dicebear.com/9.x/lorelei/svg?seed=AyeshaHairProfile",
       "rating": 5,
-      "text": "Navrivon transformed our infrastructure. We reduced deployment time from hours to minutes. The platform is intuitive, powerful, and their support team is exceptional."
+      "text": "Dummy review: Navrivon delivered our platform ahead of timeline and improved user retention with a cleaner UX."
     },
     {
-      "name": "Marcus Chen",
-      "role": "CTO at DataSync Inc",
-      "avatar": "assets/team/t2.jpg",
+      "name": "Usman Ali",
+      "role": "CTO at ScaleBridge",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=UsmanHairProfile",
       "rating": 5,
-      "text": "The AI-powered analytics give us insights we never had before. We've cut our operational costs by 40% while improving reliability. Best decision we made all year."
+      "text": "Dummy review: Their engineering discipline is excellent. API performance and deployment stability improved noticeably."
     },
     {
-      "name": "Priya Sharma",
-      "role": "Founder at CloudStart",
-      "avatar": "assets/team/t3.jpg",
+      "name": "Fatima Noor",
+      "role": "Founder at HealthNexus",
+      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=FatimaHairProfile",
       "rating": 5,
-      "text": "As a startup, we needed a platform we could trust. Navrivon delivered enterprise-grade reliability without the enterprise complexity. Their pricing is fair and transparent."
+      "text": "Dummy review: We got a production-ready MVP fast, with clear communication and very practical technical guidance."
     },
     {
-      "name": "Alex Rodriguez",
-      "role": "Head of DevOps at GlobalTech",
-      "avatar": "assets/team/t4.jpg",
+      "name": "Hamza Qureshi",
+      "role": "Head of Operations at RetailGrid",
+      "avatar":"https://api.dicebear.com/9.x/lorelei/svg?seed=HamzaHairProfile",
       "rating": 5,
-      "text": "The API integration was seamless. Within 48 hours, we had everything connected. The documentation is world-class, and when we needed help, the response time was incredible."
+      "text": "Dummy review: Automation workflows reduced repetitive work for our team and made daily operations smoother."
     }
   ],
-
   "team": [
     {
-      "name": "Ahmad Raza",
-      "role": "Founder & CEO",
-      "photo": "assets/team/ceo.jpg",
-      "linkedin": "https://linkedin.com/in/ahmadrazapk",
-      "bio": "15+ years in enterprise software. Built and scaled systems serving millions. Passionate about making complex infrastructure accessible."
+      "name": "Hamid Sajid",
+      "role": "Founder",
+      "photo": "https://api.dicebear.com/9.x/shapes/svg?seed=HamidSajid",
+      "bio": "Co-founder focused on business strategy, product direction, and long-term client partnerships."
     },
     {
-      "name": "Zara Khan",
-      "role": "CTO & Co-founder",
-      "photo": "assets/team/cto.jpg",
-      "linkedin": "https://linkedin.com/in/zarakhan",
-      "bio": "PhD in Distributed Systems. Previously led infrastructure at major cloud provider. Obsessed with performance and reliability."
+      "name": "Muhammad Ehtisham",
+      "role": "Founder",
+      "photo": "https://api.dicebear.com/9.x/shapes/svg?seed=MuhammadEhtisham",
+      "bio": "Co-founder leading engineering execution, solution architecture, and delivery excellence."
     },
     {
-      "name": "James Mitchell",
-      "role": "VP Product",
-      "photo": "assets/team/vp-product.jpg",
-      "linkedin": "https://linkedin.com/in/jamesmitchell",
-      "bio": "Serial entrepreneur with 3 successful exits. Believes great products are built by listening to customers and shipping fearlessly."
-    },
-    {
-      "name": "Lisa Chen",
-      "role": "Head of Design",
-      "photo": "assets/team/head-design.jpg",
-      "linkedin": "https://linkedin.com/in/lisachen",
-      "bio": "Design leader from award-winning tech studios. Advocates for accessibility and intuitive user experiences for complex tools."
+      "name": "Team Navrivon",
+      "role": "Product, Engineering & Design Team",
+      "photo": "https://api.dicebear.com/9.x/shapes/svg?seed=NavrivonTeam",
+      "bio": "A cross-functional team building reliable digital products across web, mobile, SaaS, and automation."
     }
   ],
-
   "faqs": [
     {
       "question": "Is there a free trial? Do I need a credit card?",
@@ -255,12 +238,26 @@
       "answer": "SSO (SAML/OAuth) is available on Professional and Enterprise plans. Custom integrations are available for Enterprise customers. Talk to our sales team to discuss your specific security and integration requirements."
     }
   ],
-
   "nav_links": [
-    { "label": "Home", "href": "#hero" },
-    { "label": "Features", "href": "#features" },
-    { "label": "Pricing", "href": "#pricing" },
-    { "label": "Team", "href": "#team" },
-    { "label": "Contact", "href": "#contact" }
+    {
+      "label": "Home",
+      "href": "#hero"
+    },
+    {
+      "label": "Features",
+      "href": "#features"
+    },
+    {
+      "label": "Offerings",
+      "href": "#offerings"
+    },
+    {
+      "label": "Team",
+      "href": "#team"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
   ]
 }
