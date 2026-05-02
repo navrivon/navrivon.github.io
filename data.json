@@ -13,41 +13,7 @@
       "instagram": "https://instagram.com/navrivon"
     }
   },
-  "alerts": [
-    {
-      "id": 1,
-      "type": "info",
-      "title": "New Release",
-      "message": "Navrivon Platform v3.2 is now live with advanced AI-powered analytics and real-time collaboration tools.",
-      "dismissible": true,
-      "active": true,
-      "link": {
-        "text": "Learn more",
-        "url": "#features"
-      }
-    },
-    {
-      "id": 2,
-      "type": "success",
-      "title": "Milestone Reached",
-      "message": "We've onboarded our 500th enterprise client this month. Thank you for your trust!",
-      "dismissible": true,
-      "active": true,
-      "link": {
-        "text": "See success stories",
-        "url": "#testimonials"
-      }
-    },
-    {
-      "id": 3,
-      "type": "warning",
-      "title": "Maintenance Notice",
-      "message": "Scheduled infrastructure maintenance on Friday, Feb 16 from 2-4 AM UTC. Services remain fully operational.",
-      "dismissible": true,
-      "active": true,
-      "link": null
-    }
-  ],
+  "alerts": [],
   "stats": [
     {
       "value": "35+",

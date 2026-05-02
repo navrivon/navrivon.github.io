@@ -262,9 +262,35 @@
 
         // ===== INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', async () => {
+            const loader = document.getElementById('page-loader');
             try {
-                // Load data
-                const response = await fetch('data.json');
+                // Load data with host-safe fallback paths
+                const dataCandidates = [
+                    './data.json',
+                    'data.json',
+                    `${window.location.origin}${window.location.pathname.replace(/\/[^/]*$/, '/')}data.json`
+                ];
+
+                let response = null;
+                let lastError = null;
+
+                for (const url of dataCandidates) {
+                    try {
+                        const res = await fetch(url, { cache: 'no-store' });
+                        if (res.ok) {
+                            response = res;
+                            break;
+                        }
+                        lastError = new Error(`Request failed (${res.status}) for ${url}`);
+                    } catch (err) {
+                        lastError = err;
+                    }
+                }
+
+                if (!response) {
+                    throw lastError || new Error('Unable to load data.json');
+                }
+
                 appData = await response.json();
 
                 // Render all sections
@@ -288,13 +314,24 @@
                 setupContactForm();
                 setupHamburgerMenu();
 
-                // Fade out loader
-                setTimeout(() => {
-                    const loader = document.getElementById('page-loader');
-                    loader.classList.add('fade-out');
-                }, 800);
             } catch (error) {
                 console.error('Error loading application:', error);
+                showToast('Some content could not load. Please refresh the page.');
+                const alertBar = document.getElementById('alert-bar');
+                if (alertBar) {
+                    alertBar.innerHTML = `
+            <div class="alert warning">
+              <div class="alert-content">
+                <div class="alert-title">Content failed to load</div>
+                <div class="alert-message">Please check that data.json is uploaded and publicly accessible on your hosting.</div>
+              </div>
+            </div>`;
+                }
+            } finally {
+                // Always fade out loader, even on data errors
+                setTimeout(() => {
+                    loader?.classList.add('fade-out');
+                }, 400);
             }
         });
 
@@ -785,23 +822,13 @@
 
             hamburger.addEventListener('click', () => {
                 hamburger.classList.toggle('active');
-                navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '100%';
-                navLinks.style.left = '0';
-                navLinks.style.right = '0';
-                navLinks.style.background = 'var(--color-surface)';
-                navLinks.style.borderBottom = '1px solid var(--color-border)';
-                navLinks.style.padding = 'var(--spacing-lg)';
-                navLinks.style.gap = '0';
+                navLinks.classList.toggle('mobile-open');
+            });
 
-                navLinks.querySelectorAll('a').forEach(link => {
-                    link.style.padding = 'var(--spacing-md) 0';
-                    link.addEventListener('click', () => {
-                        hamburger.classList.remove('active');
-                        navLinks.style.display = 'none';
-                    });
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navLinks.classList.remove('mobile-open');
                 });
             });
 
@@ -809,15 +836,7 @@
             window.addEventListener('resize', () => {
                 if (window.innerWidth > 1024) {
                     hamburger.classList.remove('active');
-                    navLinks.style.display = 'flex';
-                    navLinks.style.position = 'static';
-                    navLinks.style.background = 'transparent';
-                    navLinks.style.border = 'none';
-                    navLinks.style.padding = '0';
-                    navLinks.style.flexDirection = 'row';
-                    navLinks.querySelectorAll('a').forEach(link => {
-                        link.style.padding = 'var(--spacing-sm) 0';
-                    });
+                    navLinks.classList.remove('mobile-open');
                 }
             });
         }
