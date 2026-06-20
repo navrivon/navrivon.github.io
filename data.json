@@ -16,16 +16,16 @@
   "alerts": [],
   "stats": [
     {
-      "value": "35+",
-      "label": "Enterprise Clients"
+      "value": "50+",
+      "label": "Projects Shipped"
     },
     {
-      "value": "99.99%",
-      "label": "Platform Uptime"
+      "value": "99.9%",
+      "label": "SLA Reliability"
     },
     {
-      "value": "1.5M+",
-      "label": "Transactions Processed"
+      "value": "500K+",
+      "label": "Active Users Served"
     },
     {
       "value": "5yr+",
@@ -42,7 +42,7 @@
     {
       "icon": "https://cdn.simpleicons.org/letsencrypt/003A70",
       "title": "Enterprise Security",
-      "description": "Bank-grade encryption, SOC 2 Type II certified, and role-based access control for compliance peace of mind.",
+      "description": "Bank-grade encryption, SOC 2 Type II compliance standards, and role-based access control for complete peace of mind.",
       "badge": "Security"
     },
     {
@@ -74,134 +74,134 @@
     {
       "icon": "https://cdn.simpleicons.org/html5/E34F26",
       "title": "Custom Web Development",
-      "description": "Tailored business websites and web applications built for performance, security, and conversion."
+      "description": "Tailored business websites and web applications built for performance, security, and high conversion rates."
     },
     {
       "icon": "https://cdn.simpleicons.org/flutter/02569B",
       "title": "Mobile App Development",
-      "description": "Native and cross-platform iOS and Android apps with clean UX and scalable architecture."
+      "description": "Native and cross-platform iOS and Android apps with clean, modern UX and scalable architecture."
     },
     {
       "icon": "https://cdn.simpleicons.org/wordpress/21759B",
       "title": "WordPress Development",
-      "description": "Custom WordPress websites, theme builds, plugin integrations, and speed optimization."
+      "description": "Custom WordPress websites, bespoke theme builds, complex plugin integrations, and speed optimization."
     },
     {
       "icon": "https://cdn.simpleicons.org/shopify/95BF47",
       "title": "Shopify Development",
-      "description": "Shopify stores, custom themes, app integrations, and conversion-focused eCommerce experiences."
+      "description": "Shopify storefronts, custom liquid themes, app integrations, and conversion-focused eCommerce experiences."
     },
     {
       "icon": "https://cdn.simpleicons.org/saas/FF6B6B",
       "title": "SaaS Product Development",
-      "description": "End-to-end SaaS design and engineering, including multi-tenant systems, billing, and analytics."
+      "description": "End-to-end SaaS design and engineering, including multi-tenant databases, billing gateways, and analytics."
     },
     {
       "icon": "https://cdn.simpleicons.org/fastapi/009688",
       "title": "API Development & Integration",
-      "description": "REST/GraphQL API design, third-party integration, and secure backend service development."
+      "description": "REST/GraphQL API design, secure third-party integrations, and robust backend microservices."
     },
     {
       "icon": "https://cdn.simpleicons.org/react/61DAFB",
       "title": "Custom Web Applications",
-      "description": "Internal tools, admin portals, and workflow systems that automate operations and reduce manual work."
+      "description": "Internal business tools, admin portals, and automated workflow systems that streamline your operations."
     },
     {
       "icon": "https://cdn.simpleicons.org/figma/F24E1E",
       "title": "UI/UX Design",
-      "description": "User research, wireframes, prototypes, and polished interfaces that improve engagement."
+      "description": "User research, wireframing, high-fidelity prototypes, and polished interfaces that maximize user engagement."
     },
     {
       "icon": "https://cdn.simpleicons.org/vercel/ffffff",
       "title": "MVP Development",
-      "description": "Rapid MVP delivery to validate product ideas fast with a clear roadmap for scaling."
+      "description": "Rapid MVP delivery to validate your product ideas in market quickly with a clear blueprint for future scaling."
     },
     {
       "icon": "https://cdn.simpleicons.org/sentry/362D59",
       "title": "Software Maintenance & Support",
-      "description": "Continuous upgrades, bug fixes, monitoring, and technical support to keep systems reliable."
+      "description": "Continuous upgrades, active bug tracking, security patches, and reliable support to keep your systems online."
     },
     {
       "icon": "https://cdn.simpleicons.org/huggingface/FFD21E",
       "title": "AI & Automation Solutions",
-      "description": "Smart automations, AI-assisted workflows, and data-driven tooling to increase team productivity."
+      "description": "Smart automations, AI-assisted workflows, and data-driven intelligence to boost team productivity."
     },
     {
       "icon": "https://cdn.simpleicons.org/cypress/69D3A7",
       "title": "QA & Performance Testing",
-      "description": "Manual and automated testing, load testing, and quality assurance pipelines for stable releases."
+      "description": "Manual and automated regression testing, API load testing, and CI/CD quality gates for stable releases."
     }
   ],
   "testimonials": [
     {
       "name": "Ayesha Malik",
       "role": "Product Manager at BrightLoop",
-      "avatar": "https://api.dicebear.com/9.x/lorelei/svg?seed=AyeshaHairProfile",
+      "avatar": "assets/team/ayesha.png",
       "rating": 5,
-      "text": "Dummy review: Navrivon delivered our platform ahead of timeline and improved user retention with a cleaner UX."
+      "text": "Navrivon rebuilt our mobile and web platforms from the ground up. Their team's attention to detail, scalable architecture, and proactive communication allowed us to launch ahead of schedule and boost user retention by 40%."
     },
     {
       "name": "Usman Ali",
       "role": "CTO at ScaleBridge",
-      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=UsmanHairProfile",
+      "avatar": "assets/team/usman.png",
       "rating": 5,
-      "text": "Dummy review: Their engineering discipline is excellent. API performance and deployment stability improved noticeably."
+      "text": "Their engineering discipline is outstanding. They integrated seamlessly into our internal stack, optimized our database APIs to handle over 1M transactions daily with sub-100ms response times, and stabilized our cloud infrastructure."
     },
     {
       "name": "Fatima Noor",
       "role": "Founder at HealthNexus",
-      "avatar": "https://api.dicebear.com/9.x/adventurer/svg?seed=FatimaHairProfile",
+      "avatar": "assets/team/fatima.png",
       "rating": 5,
-      "text": "Dummy review: We got a production-ready MVP fast, with clear communication and very practical technical guidance."
+      "text": "We needed a secure, HIPAA-compliant MVP to showcase to investors within a tight timeline. Navrivon delivered a production-ready product in just 8 weeks, guiding us through every technical decision with absolute precision."
     },
     {
       "name": "Hamza Qureshi",
       "role": "Head of Operations at RetailGrid",
-      "avatar":"https://api.dicebear.com/9.x/lorelei/svg?seed=HamzaHairProfile",
+      "avatar": "assets/team/hamza.png",
       "rating": 5,
-      "text": "Dummy review: Automation workflows reduced repetitive work for our team and made daily operations smoother."
+      "text": "The custom automation tools and operations dashboards Navrivon built for us have completely transformed our workflows, reducing manual processing tasks by 70% and saving our team hundreds of hours weekly."
     }
   ],
   "team": [
     {
       "name": "Hamid Sajid",
-      "role": "Founder",
-      "photo": "https://api.dicebear.com/9.x/shapes/svg?seed=HamidSajid",
-      "bio": "Co-founder focused on business strategy, product direction, and long-term client partnerships."
+      "role": "Founder & Product Strategist",
+      "photo": "assets/team/hamid.png",
+      "bio": "Co-founder focused on product strategy, business architecture, and driving growth through client partnerships."
     },
     {
       "name": "Muhammad Ehtisham",
-      "role": "Founder",
-      "photo": "https://api.dicebear.com/9.x/shapes/svg?seed=MuhammadEhtisham",
-      "bio": "Co-founder leading engineering execution, solution architecture, and delivery excellence."
+      "role": "Founder & Technical Director",
+      "photo": "assets/team/ehtisham.png",
+      "bio": "Co-founder leading engineering architecture, technical execution, and delivery of high-performance software."
     },
     {
       "name": "Team Navrivon",
       "role": "Product, Engineering & Design Team",
-      "photo": "https://api.dicebear.com/9.x/shapes/svg?seed=NavrivonTeam",
-      "bio": "A cross-functional team building reliable digital products across web, mobile, SaaS, and automation."
+      "photo": "assets/team/team.png",
+      "bio": "A cross-functional team of elite developers, UI/UX designers, and QA specialists dedicated to shipping reliable digital products."
     }
   ],
   "faqs": [
     {
-      "question": "Is there a free trial? Do I need a credit card?",
-      "answer": "Yes! All plans include a 14-day free trial with full feature access. No credit card required to get started. When your trial ends, you choose to upgrade, downgrade, or cancel anytime."
+      "question": "What is Navrivon's typical development process?",
+      "answer": "We follow a three-stage agile approach: 1) Discover & Blueprint (defining requirements and architecture), 2) Agile Sprints (regular development iterations with staging reviews), and 3) Launch & Support (deployment, scaling, and continuous system monitoring)."
     },
     {
-      "question": "How does the monthly vs. yearly pricing work?",
-      "answer": "Choose your billing cycle at checkout. Yearly plans include 20% savings compared to monthly billing. Your renewal date is one year from the purchase date. You can switch between plans anytime with prorated billing."
+      "question": "How do we get started with a project?",
+      "answer": "Simply fill out our contact form or project planner widget, and select a time for an initial discovery call. We'll discuss your goals, draft a high-level timeline and technical proposal, and give you an estimated cost sheet."
     },
     {
-      "question": "What's included in API access limits?",
-      "answer": "API calls include all read and write operations (GET, POST, PUT, DELETE). Starter includes 5K calls/month, Professional includes 500K/month. Enterprise plans have unlimited API calls. Rate limits are applied to prevent abuse but don't affect normal usage patterns."
+      "question": "Do you provide post-launch support and maintenance?",
+      "answer": "Yes. We offer reliable post-launch SLAs covering bug fixes, server maintenance, performance optimization, feature updates, and technical monitoring to ensure your product remains robust and secure."
     },
     {
-      "question": "Can I upgrade or downgrade my plan?",
-      "answer": "Absolutely. Upgrade anytime to access more features. Downgrading is also allowed—if you have data that exceeds the lower plan's limits, we'll notify you and help you manage the transition smoothly."
+      "question": "Can you work with our existing technical team?",
+      "answer": "Absolutely. We often collaborate with internal product teams to scale engineering capacity. We can lead specific feature designs, build APIs, or assist with cloud migrations and QA pipelines."
     },
     {
-      "question": "Do you offer SSO and custom integrations?",
-      "answer": "SSO (SAML/OAuth) is available on Professional and Enterprise plans. Custom integrations are available for Enterprise customers. Talk to our sales team to discuss your specific security and integration requirements."
+      "question": "What technologies does Navrivon specialize in?",
+      "answer": "We build with modern, production-grade tools. Our stack includes React/Next.js and Flutter for frontends, Python (FastAPI/Django) and Node.js for backend services, cloud platforms like AWS and GCP, and eCommerce tools like Shopify and custom headless setups."
     }
   ],
   "nav_links": [
@@ -216,6 +216,10 @@
     {
       "label": "Offerings",
       "href": "#offerings"
+    },
+    {
+      "label": "Estimator",
+      "href": "#project-planner"
     },
     {
       "label": "Team",

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Navrivon - Custom software development agency for web, mobile, SaaS, APIs, WordPress, and Shopify solutions">
-    <meta name="theme-color" content="#0d0d0d">
+    <meta name="theme-color" content="#030014">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Navrivon">
@@ -26,7 +26,10 @@
 <body>
     <!-- PAGE LOADER -->
     <div id="page-loader">
-        <img src="assets/logo/favicon-transparent.png" alt="Navrivon" class="loader-logo" loading="lazy">
+        <div class="loader-content">
+            <img src="assets/logo/favicon-transparent.png" alt="Navrivon" class="loader-logo" loading="lazy">
+            <div class="loader-spinner"></div>
+        </div>
     </div>
 
     <!-- ALERT BAR -->
@@ -35,14 +38,13 @@
     <!-- NAVBAR -->
     <nav>
         <div class="nav-container">
-            <div class="nav-logo">
+            <a href="#hero" class="nav-logo">
                 <img src="assets/logo/small-transparent.png" alt="Navrivon Logo" loading="lazy">
                 <span class="nav-logo-text">Navrivon</span>
-            </div>
+            </a>
             <ul class="nav-links" id="nav-links"></ul>
-            <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get
-                Started</button>
-            <button class="hamburger" id="hamburger">
+            <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Get Started</button>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -52,20 +54,23 @@
 
     <!-- HERO SECTION -->
     <section id="hero">
-        <div class="hero-background" id="hero-background"></div>
-        <div class="hero-glow"></div>
+        <div class="hero-background" id="hero-background">
+            <div class="hero-glow"></div>
+        </div>
         <div class="hero-content">
+            <span class="hero-tag">Custom Software Agency</span>
             <h1 class="hero-headline" id="hero-headline"></h1>
             <p class="hero-subheadline" id="hero-subheadline"></p>
             <div class="hero-buttons">
-                <button class="btn btn-primary"
-                    onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Start
-                    Project</button>
-                <button class="btn btn-secondary" onclick="alert('Demo video coming soon!')">Watch Demo</button>
+                <button class="btn btn-primary" onclick="document.getElementById('project-planner').scrollIntoView({behavior:'smooth'})">
+                    <span>Plan Project</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+                <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact Sales</button>
             </div>
-            <p class="hero-trust">Trusted by <strong id="hero-trust-count"></strong></p>
-            <div class="scroll-chevron">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <p class="hero-trust">Delivering top-tier software for startups & enterprises</p>
+            <div class="scroll-chevron" onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
             </div>
@@ -80,20 +85,144 @@
     <!-- FEATURES SECTION -->
     <section id="features">
         <div class="section-header">
-            <h2 class="section-title">Everything you need to build at scale</h2>
-            <p class="section-subtitle">Powerful tools designed for modern development teams</p>
+            <span class="section-tag">High Performance</span>
+            <h2 class="section-title">Built for Scalability and Speed</h2>
+            <p class="section-subtitle">Our design standards and architecture ensure your software remains stable under massive load.</p>
         </div>
         <div class="features-grid" id="features-grid"></div>
+    </section>
+
+    <!-- TECH STACK EXPLORER -->
+    <section id="tech-stack">
+        <div class="section-header">
+            <span class="section-tag">Technologies</span>
+            <h2 class="section-title">Our Production Tech Stack</h2>
+            <p class="section-subtitle">We build with secure, modern, and widely-adopted frameworks to guarantee scalability.</p>
+        </div>
+        <div class="tech-container">
+            <div class="tech-orbits-wrapper">
+                <div class="tech-grid" id="tech-grid"></div>
+            </div>
+        </div>
     </section>
 
     <!-- OFFERINGS SECTION -->
     <section id="offerings">
         <div class="offerings-container">
             <div class="section-header">
+                <span class="section-tag">Services</span>
                 <h2 class="section-title">Software Development Offerings</h2>
-                <p class="section-subtitle">End-to-end services for startups, SMBs, and enterprise teams</p>
+                <p class="section-subtitle">End-to-end design and engineering support for startups and business teams.</p>
             </div>
             <div class="offerings-grid" id="offerings-grid"></div>
+        </div>
+    </section>
+
+    <!-- INTERACTIVE PROJECT PLANNER -->
+    <section id="project-planner">
+        <div class="section-header">
+            <span class="section-tag">Interactive Estimate</span>
+            <h2 class="section-title">Scope & Estimate Your Project</h2>
+            <p class="section-subtitle">Select your requirements below to calculate a timeline estimate and send it directly to our team.</p>
+        </div>
+        <div class="planner-container">
+            <div class="planner-layout">
+                <!-- Selectors (Left) -->
+                <div class="planner-card">
+                    <div>
+                        <h4 class="planner-group-title">1. Select Core Service</h4>
+                        <div class="planner-grid-select">
+                            <div class="planner-option active" data-service="web">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                <span class="planner-option-title">Web App</span>
+                            </div>
+                            <div class="planner-option" data-service="mobile">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect><line x1="12" y1="18" x2="12.01" y2="18"></line></svg>
+                                <span class="planner-option-title">Mobile App</span>
+                            </div>
+                            <div class="planner-option" data-service="saas">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                                <span class="planner-option-title">SaaS Platform</span>
+                            </div>
+                            <div class="planner-option" data-service="mvp">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                <span class="planner-option-title">Rapid MVP</span>
+                            </div>
+                            <div class="planner-option" data-service="ai">
+                                <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+                                <span class="planner-option-title">AI Automation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="planner-group-title">2. Choose Project Scale</h4>
+                        <div class="planner-grid-select">
+                            <div class="planner-option" data-scale="small">
+                                <span class="planner-option-title">Small / MVP</span>
+                            </div>
+                            <div class="planner-option active" data-scale="standard">
+                                <span class="planner-option-title">Standard</span>
+                            </div>
+                            <div class="planner-option" data-scale="enterprise">
+                                <span class="planner-option-title">Enterprise</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 class="planner-group-title">3. Features & Add-ons</h4>
+                        <div class="planner-checkboxes">
+                            <div class="planner-checkbox-item" data-addon="uiux">
+                                <input type="checkbox" class="planner-checkbox-input" id="addon-uiux">
+                                <div class="planner-checkbox-text">
+                                    <span class="planner-checkbox-title">UI/UX Design UI Blueprint</span>
+                                    <span class="planner-checkbox-desc">High-fidelity wireframes, Figma prototypes, and complete style guide design.</span>
+                                </div>
+                            </div>
+                            <div class="planner-checkbox-item" data-addon="qa">
+                                <input type="checkbox" class="planner-checkbox-input" id="addon-qa">
+                                <div class="planner-checkbox-text">
+                                    <span class="planner-checkbox-title">Advanced Quality Assurance & QA</span>
+                                    <span class="planner-checkbox-desc">Automated testing script creation, cypress integration, and CI/CD pipelines.</span>
+                                </div>
+                            </div>
+                            <div class="planner-checkbox-item" data-addon="support">
+                                <input type="checkbox" class="planner-checkbox-input" id="addon-support">
+                                <div class="planner-checkbox-text">
+                                    <span class="planner-checkbox-title">Post-Launch SLA Maintenance</span>
+                                    <span class="planner-checkbox-desc">Continuous monitoring, bug resolution, server management, and patches.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dashboard Estimate (Right) -->
+                <div class="estimator-dashboard">
+                    <h3 class="dashboard-title">Project Estimate Summary</h3>
+                    
+                    <div class="dashboard-metric">
+                        <span class="metric-label">Estimated Delivery Timeline</span>
+                        <div class="metric-value" id="estimator-timeline">4-6 Weeks</div>
+                        <span class="metric-sub">Agile sprints with weekly updates</span>
+                    </div>
+
+                    <div class="dashboard-metric">
+                        <span class="metric-label">Technical Complexity</span>
+                        <div class="metric-value" id="estimator-complexity">45%</div>
+                        <div class="dashboard-meter-container">
+                            <div class="dashboard-meter-track">
+                                <div class="dashboard-meter-fill" id="estimator-meter-fill"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="dashboard-cta" onclick="sendWhatsAppProposal()">
+                        <span>Request Proposals on WhatsApp</span>
+                    </button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -101,26 +230,43 @@
     <section id="how-it-works">
         <div class="how-it-works-container">
             <div class="section-header">
-                <h2 class="section-title">How it Works</h2>
-                <p class="section-subtitle">Three simple steps to get started</p>
+                <span class="section-tag">Workflow</span>
+                <h2 class="section-title">Our Development Lifecycle</h2>
+                <p class="section-subtitle">A collaborative three-step process built to guarantee quality at launch.</p>
             </div>
             <div class="how-it-works-grid" id="how-it-works-grid">
+                <div class="how-it-works-line"></div>
                 <div class="step">
-                    <div class="step-number">1</div>
-                    <h3 class="step-title">Connect Your Stack</h3>
-                    <p class="step-description">Integrate with your existing tools and services seamlessly</p>
+                    <div class="step-number">01</div>
+                    <h3 class="step-title">Discover & Blueprint</h3>
+                    <p class="step-description">We align on features, draft system architecture wireframes, and outline the technical blueprint.</p>
                 </div>
                 <div class="step">
-                    <div class="step-number">2</div>
-                    <h3 class="step-title">Configure Workflow</h3>
-                    <p class="step-description">Set up automation and customize to your exact needs</p>
+                    <div class="step-number">02</div>
+                    <h3 class="step-title">Agile Sprints</h3>
+                    <p class="step-description">Weekly deliverables, staging reviews, and manual/automated testing ensure continuous alignment.</p>
                 </div>
                 <div class="step">
-                    <div class="step-number">3</div>
-                    <h3 class="step-title">Ship & Scale</h3>
-                    <p class="step-description">Deploy with confidence and scale effortlessly</p>
+                    <div class="step-number">03</div>
+                    <h3 class="step-title">Launch & SLA Support</h3>
+                    <p class="step-description">We handle server configurations, database security migrations, and offer robust support contracts.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials">
+        <div class="testimonials-container">
+            <div class="section-header">
+                <span class="section-tag">Reviews</span>
+                <h2 class="section-title">Client Success Stories</h2>
+                <p class="section-subtitle">Read how we helped businesses design, build, and optimize their core platforms.</p>
+            </div>
+            <div class="carousel-wrapper">
+                <div class="carousel" id="carousel"></div>
+            </div>
+            <div class="carousel-dots" id="carousel-dots"></div>
         </div>
     </section>
 
@@ -128,10 +274,23 @@
     <section id="team">
         <div class="team-container">
             <div class="section-header">
-                <h2 class="section-title">The people behind Navrivon</h2>
-                <p class="section-subtitle">Meet the talented team driving innovation</p>
+                <span class="section-tag">Our Team</span>
+                <h2 class="section-title">The People Behind Navrivon</h2>
+                <p class="section-subtitle">Meet the team driving software innovation and operational excellence.</p>
             </div>
             <div class="team-grid" id="team-grid"></div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq">
+        <div class="faqs-container">
+            <div class="section-header">
+                <span class="section-tag">Got Questions?</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle">Find answers to our development lifecycle models, pricing, support, and stack options.</p>
+            </div>
+            <div id="faq-list"></div>
         </div>
     </section>
 
@@ -139,7 +298,10 @@
     <section id="contact">
         <div class="contact-container">
             <div class="contact-info">
-                <h2 class="section-title">Get in touch</h2>
+                <span class="section-tag">Get In Touch</span>
+                <h2 class="section-title" style="margin-bottom: var(--spacing-lg);">Let's Build Something Together</h2>
+                <p class="section-subtitle" style="margin-bottom: var(--spacing-2xl);">Reach out to discuss your software ideas or request a customized technical proposal.</p>
+                
                 <div class="contact-info-item">
                     <div class="contact-info-label">Email</div>
                     <a href="mailto:info@navrivon.com" class="contact-info-value" id="contact-email"></a>
@@ -160,11 +322,13 @@
                     <input type="text" class="form-input" name="name" placeholder="Your name" required>
                     <div class="form-error">Please enter your name</div>
                 </div>
+
                 <div class="form-group">
-                    <label class="form-label">Email</label>
+                    <label class="form-label">Email Address</label>
                     <input type="email" class="form-input" name="email" placeholder="your@email.com" required>
                     <div class="form-error">Please enter a valid email</div>
                 </div>
+
                 <div class="form-group">
                     <label class="form-label">Subject</label>
                     <select class="form-select" name="subject" required>
@@ -176,12 +340,14 @@
                     </select>
                     <div class="form-error">Please select a subject</div>
                 </div>
+
                 <div class="form-group">
-                    <label class="form-label">Message</label>
-                    <textarea class="form-textarea" name="message" placeholder="Tell us more..." required></textarea>
+                    <label class="form-label">Message Details</label>
+                    <textarea class="form-textarea" name="message" placeholder="Tell us more about your project needs..." required></textarea>
                     <div class="form-error">Please enter your message</div>
                 </div>
-                <button type="submit" class="form-submit">Send Message</button>
+
+                <button type="submit" class="form-submit">Send Inquiry</button>
             </form>
         </div>
     </section>
@@ -193,44 +359,36 @@
                 <div>
                     <div class="footer-brand">
                         <img src="assets/logo/full-transparent.png" alt="Navrivon Logo" loading="lazy">
-                        <div class="footer-brand-info">
-                            <div class="footer-brand-name">Navrivon</div>
-                            <div class="footer-brand-tagline" id="footer-tagline"></div>
-                        </div>
+                        <div class="footer-brand-name">Navrivon</div>
                     </div>
+                    <div class="footer-brand-tagline" id="footer-tagline"></div>
                     <div class="footer-social" id="footer-social"></div>
-                    <div class="footer-contact" id="footer-contact"></div>
                 </div>
                 <div class="footer-section">
-                    <h4>Product</h4>
+                    <h4>Products</h4>
                     <div class="footer-links">
                         <a href="#features">Features</a>
                         <a href="#offerings">Offerings</a>
-                        <a href="#">Security</a>
-                        <a href="#">Status</a>
+                        <a href="#project-planner">Project Estimator</a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h4>Company</h4>
                     <div class="footer-links">
-                        <a href="#team">Team</a>
-                        <a href="#">Blog</a>
-                        <a href="#">Careers</a>
-                        <a href="#">Press</a>
+                        <a href="#team">Team Members</a>
+                        <a href="#contact">Contact Details</a>
                     </div>
                 </div>
                 <div class="footer-section">
                     <h4>Resources</h4>
                     <div class="footer-links">
-                        <a href="#">Documentation</a>
-                        <a href="#">API Docs</a>
-                        <a href="#">Support</a>
-                        <a href="#">Contact</a>
+                        <a href="#faq">FAQs & Guides</a>
+                        <a href="mailto:info@navrivon.com">Support Team</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <div>© 2025 Navrivon. All rights reserved.</div>
+                <div>© 2026 Navrivon. All rights reserved. Custom digital products created globally.</div>
                 <div class="footer-links-bottom">
                     <a href="#">Privacy Policy</a>
                     <a href="#">Terms of Service</a>
@@ -239,18 +397,56 @@
         </div>
     </footer>
 
-    <!-- MAIN JAVASCRIPT -->
+    <!-- MAIN JAVASCRIPT LOGIC -->
     <script>
-        // ===== APPLICATION STATE =====
+        // ===== GLOBAL APPLICATION STATE =====
         let appData = {};
         let currentCarouselIndex = 0;
         const dismissedAlerts = JSON.parse(localStorage.getItem('dismissed-alerts') || '[]');
+
+        // Planner Widget Selection Variables
+        let selectedService = 'web';
+        let selectedScale = 'standard';
+        let selectedAddons = new Set();
+
+        const serviceRates = {
+            'web': { title: 'Custom Web Development', minWeeks: 3, maxWeeks: 5, complexity: 35 },
+            'mobile': { title: 'Mobile App Development', minWeeks: 5, maxWeeks: 8, complexity: 65 },
+            'saas': { title: 'SaaS Product Development', minWeeks: 6, maxWeeks: 10, complexity: 85 },
+            'mvp': { title: 'MVP Development', minWeeks: 3, maxWeeks: 6, complexity: 45 },
+            'ai': { title: 'AI & Automation Solutions', minWeeks: 4, maxWeeks: 7, complexity: 55 }
+        };
+        const scaleMultipliers = {
+            'small': { label: 'Small / MVP Scale', weeksMult: 0.8, compMult: 0.8 },
+            'standard': { label: 'Standard Business Scale', weeksMult: 1.0, compMult: 1.0 },
+            'enterprise': { label: 'Enterprise Infrastructure Scale', weeksMult: 1.5, compMult: 1.4 }
+        };
+        const addonRates = {
+            'uiux': { title: 'UI/UX Design', weeks: 1, complexity: 10 },
+            'qa': { title: 'QA & Testing', weeks: 1, complexity: 5 },
+            'support': { title: 'Maintenance & Support', weeks: 0, complexity: 5 }
+        };
+
+        const techStackList = [
+            { name: 'React / Next.js', icon: 'https://cdn.simpleicons.org/nextdotjs/ffffff' },
+            { name: 'Flutter', icon: 'https://cdn.simpleicons.org/flutter/02569B' },
+            { name: 'FastAPI', icon: 'https://cdn.simpleicons.org/fastapi/009688' },
+            { name: 'Node.js', icon: 'https://cdn.simpleicons.org/nodedotjs/339933' },
+            { name: 'Python', icon: 'https://cdn.simpleicons.org/python/3776AB' },
+            { name: 'PostgreSQL', icon: 'https://cdn.simpleicons.org/postgresql/4169E1' },
+            { name: 'Amazon AWS', icon: 'https://cdn.simpleicons.org/amazonwebservices/FF9900' },
+            { name: 'Google Cloud', icon: 'https://cdn.simpleicons.org/googlecloud/4285F4' },
+            { name: 'Tailwind CSS', icon: 'https://cdn.simpleicons.org/tailwindcss/06B6D4' },
+            { name: 'Shopify', icon: 'https://cdn.simpleicons.org/shopify/95BF47' },
+            { name: 'WordPress', icon: 'https://cdn.simpleicons.org/wordpress/21759B' },
+            { name: 'OpenAI', icon: 'https://cdn.simpleicons.org/openai/412991' }
+        ];
 
         // ===== INITIALIZATION =====
         document.addEventListener('DOMContentLoaded', async () => {
             const loader = document.getElementById('page-loader');
             try {
-                // Load data with host-safe fallback paths
+                // Fetch site content details
                 const dataCandidates = [
                     './data.json',
                     'data.json',
@@ -279,75 +475,67 @@
 
                 appData = await response.json();
 
-                // Render all sections
+                // Render dynamic elements
                 renderAlerts();
                 renderNavigation();
                 renderHero();
                 renderStats();
                 renderFeatures();
                 renderOfferings();
+                renderTechStack();
+                renderTestimonials();
                 renderTeam();
+                renderFAQs();
                 renderContact();
                 renderFooter();
 
-                // Setup interactions
-                setupScrollAnimations();
+                // Interactive UI events
+                setupCardGlowEffect();
                 setupNavbarScroll();
                 setupParticles();
-                setupFAQ();
+                setupFAQAccordion();
                 setupContactForm();
                 setupHamburgerMenu();
+                setupPlannerEvents();
+                setupCarousel();
 
             } catch (error) {
                 console.error('Error loading application:', error);
                 showToast('Some content could not load. Please refresh the page.');
-                const alertBar = document.getElementById('alert-bar');
-                if (alertBar) {
-                    alertBar.innerHTML = `
-            <div class="alert warning">
-              <div class="alert-content">
-                <div class="alert-title">Content failed to load</div>
-                <div class="alert-message">Please check that data.json is uploaded and publicly accessible on your hosting.</div>
-              </div>
-            </div>`;
-                }
             } finally {
-                // Always fade out loader, even on data errors
+                // Fade loader
                 setTimeout(() => {
                     loader?.classList.add('fade-out');
                 }, 400);
             }
         });
 
-        // ===== RENDER FUNCTIONS =====
+        // ===== RENDERING LOGIC =====
         function renderAlerts() {
             const alertBar = document.getElementById('alert-bar');
             alertBar.innerHTML = '';
-
-            appData.alerts.forEach(alert => {
-                if (alert.active && !dismissedAlerts.includes(alert.id)) {
-                    const alertEl = document.createElement('div');
-                    alertEl.className = `alert ${alert.type}`;
-                    alertEl.innerHTML = `
-            <div class="alert-content">
-              <div class="alert-title">${alert.title}</div>
-              <div class="alert-message">${alert.message}</div>
-              ${alert.link ? `<a href="${alert.link.url}" class="alert-link">${alert.link.text}</a>` : ''}
-            </div>
-            ${alert.dismissible ? `<button class="alert-close" aria-label="Close alert">×</button>` : ''}
-          `;
-
-                    if (alert.dismissible) {
+            if (appData.alerts && appData.alerts.length > 0) {
+                appData.alerts.forEach(alert => {
+                    if (alert.active && !dismissedAlerts.includes(alert.id)) {
+                        const alertEl = document.createElement('div');
+                        alertEl.className = 'alert';
+                        alertEl.innerHTML = `
+                            <div class="alert-content">
+                                <span class="alert-badge">${alert.type}</span>
+                                <span>${alert.title}: ${alert.message}</span>
+                                ${alert.link ? `<a href="${alert.link.url}" style="color:var(--color-accent);font-weight:600;margin-left:8px;">${alert.link.text} →</a>` : ''}
+                            </div>
+                            <button class="alert-close" aria-label="Dismiss Alert">×</button>
+                        `;
                         alertEl.querySelector('.alert-close').addEventListener('click', () => {
                             dismissedAlerts.push(alert.id);
                             localStorage.setItem('dismissed-alerts', JSON.stringify(dismissedAlerts));
                             alertEl.remove();
                         });
+                        alertBar.appendChild(alertEl);
                     }
-
-                    alertBar.appendChild(alertEl);
-                }
-            });
+                });
+            }
         }
 
         function renderNavigation() {
@@ -360,71 +548,89 @@
         function renderHero() {
             document.getElementById('hero-headline').textContent = appData.company.tagline;
             document.getElementById('hero-subheadline').textContent = appData.company.description;
-            document.getElementById('hero-trust-count').textContent = appData.stats[0].value;
         }
 
         function renderStats() {
             const statsContainer = document.getElementById('stats-container');
             statsContainer.innerHTML = appData.stats
-                .map((stat, idx) => `
-          <div class="stat-item" data-aos="fadeInUp" style="animation-delay: ${idx * 80}ms">
-            <div class="stat-value" data-value="${stat.value}">0</div>
-            <div class="stat-label">${stat.label}</div>
-          </div>
-        `)
+                .map(stat => `
+                    <div class="stat-item">
+                        <div class="stat-value" data-value="${stat.value}">${stat.value}</div>
+                        <div class="stat-label">${stat.label}</div>
+                    </div>
+                `)
                 .join('');
         }
 
         function renderFeatures() {
             const featuresGrid = document.getElementById('features-grid');
             featuresGrid.innerHTML = appData.features
-                .map((feature, idx) => `
-          <div class="feature-card" data-aos="zoomInUp" style="animation-delay: ${idx * 80}ms">
-            <img src="${feature.icon}" alt="${feature.title} icon" class="feature-icon-img" loading="lazy" onerror="this.onerror=null;this.src='assets/logo/favicon.png';">
-            <h3 class="feature-title">${feature.title}</h3>
-            <p class="feature-description">${feature.description}</p>
-            ${feature.badge ? `<span class="feature-badge">${feature.badge}</span>` : ''}
-          </div>
-        `)
+                .map(feature => `
+                    <div class="feature-card">
+                        <div class="feature-icon-container">
+                            <img src="${feature.icon}" alt="${feature.title} icon" class="feature-icon-img" loading="lazy" onerror="this.onerror=null;this.src='assets/logo/favicon.png';">
+                        </div>
+                        <h3 class="feature-title">${feature.title}</h3>
+                        <p class="feature-description">${feature.description}</p>
+                        ${feature.badge ? `<span class="feature-badge">${feature.badge}</span>` : ''}
+                    </div>
+                `)
                 .join('');
-            setupCardCollapse('features-grid', 3);
+        }
+
+        function renderTechStack() {
+            const grid = document.getElementById('tech-grid');
+            grid.innerHTML = techStackList
+                .map(tech => `
+                    <div class="tech-item" title="${tech.name}">
+                        <div class="tech-item-icon-box">
+                            <img src="${tech.icon}" alt="${tech.name}" class="tech-item-icon" loading="lazy">
+                        </div>
+                        <span class="tech-item-name">${tech.name}</span>
+                    </div>
+                `)
+                .join('');
         }
 
         function renderOfferings() {
             const offeringsGrid = document.getElementById('offerings-grid');
             offeringsGrid.innerHTML = appData.offerings
                 .map((service, idx) => `
-          <div class="offering-card" data-aos="fadeInUp" style="animation-delay: ${idx * 70}ms">
-            <img src="${service.icon}" alt="${service.title} logo" class="offering-icon-img" loading="lazy" onerror="this.onerror=null;this.src='assets/logo/favicon.png';">
-            <h3 class="offering-title">${service.title}</h3>
-            <p class="offering-description">${service.description}</p>
-          </div>
-        `)
+                    <div class="offering-card">
+                        <div class="offering-icon-container">
+                            <img src="${service.icon}" alt="${service.title} logo" class="offering-icon-img" loading="lazy" onerror="this.onerror=null;this.src='assets/logo/favicon.png';">
+                        </div>
+                        <h3 class="offering-title">${service.title}</h3>
+                        <p class="offering-description">${service.description}</p>
+                    </div>
+                `)
                 .join('');
-            setupCardCollapse('offerings-grid', 3);
+            setupCardCollapse('offerings-grid', 6);
         }
 
         function renderTestimonials() {
             const carousel = document.getElementById('carousel');
             carousel.innerHTML = appData.testimonials
-                .map((testimonial, idx) => `
-          <div class="testimonial-card" data-aos="flipInY">
-            <div class="testimonial-stars">
-              ${[...Array(testimonial.rating)].map(() => '<span class="star">★</span>').join('')}
-            </div>
-            <p class="testimonial-text">"${testimonial.text}"</p>
-            <div class="testimonial-author">
-              <img src="${testimonial.avatar}" alt="${testimonial.name}" class="testimonial-avatar" loading="lazy">
-              <div class="testimonial-info">
-                <div class="testimonial-name">${testimonial.name}</div>
-                <div class="testimonial-role">${testimonial.role}</div>
-              </div>
-            </div>
-          </div>
-        `)
+                .map(testimonial => {
+                    const initials = testimonial.name.split(' ').map(n => n[0]).join('');
+                    return `
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">
+                            ${[...Array(testimonial.rating)].map(() => '<span class="star">★</span>').join('')}
+                        </div>
+                        <p class="testimonial-text">"${testimonial.text}"</p>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar-monogram">${initials}</div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">${testimonial.name}</div>
+                                <div class="testimonial-role">${testimonial.role}</div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                })
                 .join('');
 
-            // Render dots
             const dots = document.getElementById('carousel-dots');
             dots.innerHTML = appData.testimonials
                 .map((_, idx) => `<div class="dot ${idx === 0 ? 'active' : ''}" data-dot="${idx}"></div>`)
@@ -434,19 +640,89 @@
         function renderTeam() {
             const teamGrid = document.getElementById('team-grid');
             teamGrid.innerHTML = appData.team
-                .map((member, idx) => `
-          <div class="team-member" data-aos="rotateIn" style="animation-delay: ${idx * 80}ms">
-            <img src="${member.photo}" alt="${member.name}" class="team-photo" loading="lazy">
-            <h3 class="team-name">${member.name}</h3>
-            <div class="team-role">${member.role}</div>
-            <p class="team-bio">${member.bio}</p>
-          </div>
-        `)
+                .map(member => {
+                    const initials = member.name.split(' ').map(n => n[0]).join('');
+                    const isTeamIcon = member.name.toLowerCase().includes('team');
+                    const avatarContent = isTeamIcon 
+                        ? `<div class="team-photo-monogram team-photo-group-icon">
+                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:28px;height:28px;"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                           </div>` 
+                        : `<div class="team-photo-monogram">${initials}</div>`;
+                    return `
+                    <div class="team-member">
+                        <div class="team-photo-container">
+                            ${avatarContent}
+                        </div>
+                        <h3 class="team-name">${member.name}</h3>
+                        <div class="team-role">${member.role}</div>
+                        <p class="team-bio">${member.bio}</p>
+                    </div>
+                `;
+                })
                 .join('');
-            setupCardCollapse('team-grid', 3);
         }
 
-        function setupCardCollapse(gridId, visibleCount = 3) {
+        function renderFAQs() {
+            const faqList = document.getElementById('faq-list');
+            faqList.innerHTML = appData.faqs
+                .map(faq => `
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>${faq.question}</span>
+                            <span class="faq-toggle">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>${faq.answer}</p>
+                        </div>
+                    </div>
+                `)
+                .join('');
+        }
+
+        function renderContact() {
+            document.getElementById('contact-email').textContent = appData.company.email;
+            document.getElementById('contact-email').href = `mailto:${appData.company.email}`;
+            document.getElementById('contact-phone').textContent = appData.company.phone;
+            document.getElementById('contact-phone').href = `tel:${appData.company.phone.replace(/\s+/g, '')}`;
+            document.getElementById('contact-address').textContent = appData.company.address;
+
+            const socialLinks = [
+                { key: 'linkedin', label: 'LinkedIn', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/linkedin.svg' },
+                { key: 'github', label: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/github.svg' },
+                { key: 'instagram', label: 'Instagram', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/instagram.svg' },
+                { key: 'facebook', label: 'Facebook', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/facebook.svg' }
+            ];
+
+            const contactSocial = document.getElementById('contact-social');
+            contactSocial.innerHTML = socialLinks
+                .map(social => `
+                    <a href="${appData.company.social[social.key]}" target="_blank" rel="noopener noreferrer" title="${social.label}">
+                        <img src="${social.icon}" alt="${social.label}" class="social-icon-img" loading="lazy">
+                    </a>
+                `)
+                .join('');
+        }
+
+        function renderFooter() {
+            document.getElementById('footer-tagline').textContent = appData.company.tagline;
+            
+            const socialLinks = [
+                { key: 'linkedin', label: 'LinkedIn', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/linkedin.svg' },
+                { key: 'github', label: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/github.svg' },
+                { key: 'instagram', label: 'Instagram', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/instagram.svg' },
+                { key: 'facebook', label: 'Facebook', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/facebook.svg' }
+            ];
+            const footerSocial = document.getElementById('footer-social');
+            footerSocial.innerHTML = socialLinks
+                .map(social => `
+                    <a href="${appData.company.social[social.key]}" target="_blank" rel="noopener noreferrer" title="${social.label}">
+                        <img src="${social.icon}" alt="${social.label}" class="social-icon-img" loading="lazy">
+                    </a>
+                `)
+                .join('');
+        }
+
+        function setupCardCollapse(gridId, visibleCount = 6) {
             const grid = document.getElementById(gridId);
             if (!grid || !grid.parentElement) return;
 
@@ -459,16 +735,13 @@
             cards.forEach((card, index) => {
                 if (index >= visibleCount) {
                     card.classList.add('is-collapsed-card');
-                } else {
-                    card.classList.remove('is-collapsed-card');
                 }
             });
 
             const toggleBtn = document.createElement('button');
-            toggleBtn.type = 'button';
             toggleBtn.className = 'collapse-toggle';
             toggleBtn.dataset.target = gridId;
-            toggleBtn.textContent = 'Show More';
+            toggleBtn.textContent = 'Show All Services';
 
             toggleBtn.addEventListener('click', () => {
                 const expanded = toggleBtn.classList.toggle('expanded');
@@ -477,210 +750,48 @@
                         card.classList.toggle('is-collapsed-card', !expanded);
                     }
                 });
-                toggleBtn.textContent = expanded ? 'Show Less' : 'Show More';
+                toggleBtn.textContent = expanded ? 'Show Less' : 'Show All Services';
             });
 
             grid.parentElement.appendChild(toggleBtn);
         }
 
-        function renderContact() {
-            document.getElementById('contact-email').textContent = appData.company.email;
-            document.getElementById('contact-email').href = `mailto:${appData.company.email}`;
-            document.getElementById('contact-phone').textContent = appData.company.phone;
-            document.getElementById('contact-phone').href = `tel:${appData.company.phone.replace(/\s+/g, '')}`;
-            document.getElementById('contact-address').textContent = appData.company.address;
-
-            const socialLinks = [
-                { key: 'instagram', label: 'Instagram', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/instagram.svg' },
-                { key: 'linkedin', label: 'LinkedIn', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/linkedin.svg' },
-                { key: 'facebook', label: 'Facebook', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/facebook.svg' },
-                { key: 'github', label: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/github.svg' }
-            ];
-
-            const contactSocial = document.getElementById('contact-social');
-            contactSocial.innerHTML = socialLinks
-                .map((social) => `
-        <a href="${appData.company.social[social.key]}" target="_blank" rel="noopener noreferrer" title="${social.label}" aria-label="${social.label}">
-          <img src="${social.icon}" alt="${social.label}" class="social-icon-img" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/simple-icons@11/icons/${social.key}.svg';">
-        </a>
-      `)
-                .join('');
-        }
-
-        function renderFooter() {
-            document.getElementById('footer-tagline').textContent = appData.company.tagline;
-            document.getElementById('footer-contact').innerHTML = `
-        <a href="mailto:${appData.company.email}">${appData.company.email}</a>
-        <a href="tel:${appData.company.phone.replace(/\s+/g, '')}">${appData.company.phone}</a>
-      `;
-            const socialLinks = [
-                { key: 'instagram', label: 'Instagram', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/instagram.svg' },
-                { key: 'linkedin', label: 'LinkedIn', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/linkedin.svg' },
-                { key: 'facebook', label: 'Facebook', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/facebook.svg' },
-                { key: 'github', label: 'GitHub', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@11/icons/github.svg' }
-            ];
-            const footerSocial = document.getElementById('footer-social');
-            footerSocial.innerHTML = socialLinks
-                .map((social) => `
-        <a href="${appData.company.social[social.key]}" target="_blank" rel="noopener noreferrer" title="${social.label}" aria-label="${social.label}">
-          <img src="${social.icon}" alt="${social.label}" class="social-icon-img" loading="lazy" onerror="this.onerror=null;this.src='https://cdn.jsdelivr.net/npm/simple-icons@11/icons/${social.key}.svg';">
-        </a>
-      `)
-                .join('');
-        }
-
-        // ===== INTERACTION SETUP =====
-        function setupScrollAnimations() {
-            // Extended animation options with stagger support
-            const animationMap = {
-                '.section-header': { animation: 'fadeInUp', delay: 0 },
-                '.feature-card': { animation: 'zoomInUp', stagger: true },
-                '.offering-card': { animation: 'fadeInUp', stagger: true },
-                '.team-member': { animation: 'rotateIn', stagger: true },
-                '.stat-item': { animation: 'fadeInUp', stagger: true },
-                '.step': { animation: 'fadeInLeft', stagger: true },
-                '.testimonial-card': { animation: 'flipInY', delay: 0 },
-                '.faq-item': { animation: 'fadeInRight', stagger: true }
-            };
-
-            const observerOptions = {
-                threshold: 0.15,
-                rootMargin: '0px 0px -80px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Animate stats with countUp
-                        if (entry.target.id === 'stats') {
-                            document.querySelectorAll('.stat-value').forEach((stat, idx) => {
-                                if (!stat.hasAttribute('data-animated')) {
-                                    stat.setAttribute('data-animated', 'true');
-                                    setTimeout(() => countUp(stat), idx * 100);
-                                }
-                            });
-                        }
-
-                        // Apply animation to various element types
-                        Object.entries(animationMap).forEach(([selector, config]) => {
-                            if (entry.target.matches(selector) || entry.target.querySelector(selector)) {
-                                const elements = entry.target.matches(selector)
-                                    ? [entry.target]
-                                    : entry.target.querySelectorAll(selector);
-
-                                elements.forEach((el, idx) => {
-                                    if (!el.hasAttribute('data-animated')) {
-                                        el.setAttribute('data-animated', 'true');
-                                        el.style.animation = `${config.animation} 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards`;
-                                        el.style.animationDelay = (config.stagger ? idx * 80 + 'ms' : config.delay + 'ms');
-                                    }
-                                });
-                            }
-                        });
-
-                        // Parallax effect on hero section
-                        if (entry.target.id === 'hero') {
-                            window.addEventListener('scroll', () => {
-                                const scrollY = window.scrollY;
-                                const heroGlow = document.querySelector('.hero-glow');
-                                if (heroGlow && scrollY < window.innerHeight) {
-                                    heroGlow.style.transform = `translate(-50%, calc(-50% + ${scrollY * 0.3}px))`;
-                                }
-                            });
-                        }
-                    }
-                });
-            }, observerOptions);
-
-            // Observe all animated elements
-            Object.keys(animationMap).forEach(selector => {
-                document.querySelectorAll(selector).forEach(el => {
-                    observer.observe(el);
-                });
-            });
-
-            // Observe sections
-            ['hero', 'stats', 'features', 'offerings', 'team'].forEach(id => {
-                const el = document.getElementById(id);
-                if (el) observer.observe(el);
-            });
-
-            // Parallax mouse movement on cards on hover
-            document.querySelectorAll('.feature-card, .offering-card, .team-member').forEach(card => {
-                card.addEventListener('mousemove', (e) => {
+        // ===== INTERACTIVE FUNCTIONS =====
+        function setupCardGlowEffect() {
+            // Track mouse positions relative to cards to render gradient border glows
+            document.addEventListener('mousemove', (e) => {
+                const cards = document.querySelectorAll('.feature-card, .offering-card, .team-member, .planner-card, .planner-option, .planner-checkbox-item');
+                cards.forEach(card => {
                     const rect = card.getBoundingClientRect();
                     const x = e.clientX - rect.left;
                     const y = e.clientY - rect.top;
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    const rotateX = (y - centerY) * 0.1;
-                    const rotateY = (centerX - x) * 0.1;
-
-                    card.style.setProperty('--rotateX', rotateX + 'deg');
-                    card.style.setProperty('--rotateY', rotateY + 'deg');
-                });
-
-                card.addEventListener('mouseleave', () => {
-                    card.style.setProperty('--rotateX', '0deg');
-                    card.style.setProperty('--rotateY', '0deg');
+                    card.style.setProperty('--mouse-x', `${x}px`);
+                    card.style.setProperty('--mouse-y', `${y}px`);
                 });
             });
-        }
-
-        function countUp(element) {
-            const value = element.getAttribute('data-value');
-            const number = parseInt(value.replace(/\D/g, ''));
-            const duration = 2000;
-            const steps = 60;
-            let current = 0;
-            const increment = number / steps;
-
-            const interval = setInterval(() => {
-                current += increment;
-                if (current >= number) {
-                    element.textContent = value;
-                    clearInterval(interval);
-                } else {
-                    element.textContent = Math.floor(current) + (value.includes('+') ? '+' : value.includes('%') ? '%' : value.includes('yr') ? 'yr' : 'M');
-                }
-            }, duration / steps);
         }
 
         function setupNavbarScroll() {
             const navbar = document.querySelector('nav');
             const navLinks = document.querySelectorAll('.nav-links a');
-            const heroContent = document.querySelector('.hero-content');
-            const scrollChevron = document.querySelector('.scroll-chevron');
 
             window.addEventListener('scroll', () => {
                 const scrollY = window.scrollY;
-                const threshold = 80;
-
-                // Navbar background blur effect
-                if (scrollY > threshold) {
+                if (scrollY > 50) {
                     navbar.classList.add('scrolled');
                 } else {
                     navbar.classList.remove('scrolled');
                 }
 
-                // Parallax effect for hero content
-                if (heroContent && scrollY < window.innerHeight) {
-                    heroContent.style.transform = `translateY(${scrollY * 0.4}px)`;
-                    heroContent.style.opacity = Math.max(0.3, 1 - scrollY / window.innerHeight * 0.7);
-                }
-
-                // Fade and move scroll chevron
-                if (scrollChevron && scrollY < window.innerHeight) {
-                    scrollChevron.style.opacity = Math.max(0, 1 - scrollY / (window.innerHeight * 0.5));
-                    scrollChevron.style.transform = `translateY(${scrollY * 0.5}px)`;
-                }
-
-                // Update active nav link
+                // Scroll spy to highlight nav links
                 let current = '';
                 appData.nav_links.forEach(link => {
                     const section = document.querySelector(link.href);
-                    if (section && section.offsetTop <= window.scrollY + 100) {
-                        current = link.href;
+                    if (section) {
+                        const top = section.offsetTop - 100;
+                        if (scrollY >= top) {
+                            current = link.href;
+                        }
                     }
                 });
 
@@ -692,7 +803,7 @@
                 });
             });
 
-            // Smooth scroll for nav links
+            // Smooth link transitions
             navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -704,28 +815,57 @@
 
         function setupParticles() {
             const background = document.getElementById('hero-background');
-            const particleCount = 30;
+            const particleCount = 20;
 
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.top = Math.random() * 100 + '%';
-                particle.style.animation = `drift ${10 + Math.random() * 10}s linear infinite`;
-                particle.style.animationDelay = Math.random() * 5 + 's';
+                particle.style.cssText = `
+                    position: absolute;
+                    width: ${Math.random() * 2 + 1}px;
+                    height: ${Math.random() * 2 + 1}px;
+                    background: var(--color-primary);
+                    opacity: ${Math.random() * 0.2 + 0.1};
+                    border-radius: 50%;
+                    left: ${Math.random() * 100}%;
+                    top: ${Math.random() * 100}%;
+                    pointer-events: none;
+                    animation: drift ${15 + Math.random() * 15}s linear infinite;
+                `;
                 background.appendChild(particle);
             }
 
             const style = document.createElement('style');
             style.textContent = `
-        @keyframes drift {
-          0%, 100% { transform: translate(0, 0); }
-          25% { transform: translate(50px, -50px); }
-          50% { transform: translate(-30px, 30px); }
-          75% { transform: translate(40px, 50px); }
-        }
-      `;
+                @keyframes drift {
+                    0%, 100% { transform: translate(0, 0); }
+                    33% { transform: translate(${Math.random() * 60 - 30}px, ${Math.random() * -60}px); }
+                    66% { transform: translate(${Math.random() * 60 - 30}px, ${Math.random() * 60 - 30}px); }
+                }
+            `;
             document.head.appendChild(style);
+        }
+
+        function setupFAQAccordion() {
+            document.addEventListener('click', (e) => {
+                const faqQuestion = e.target.closest('.faq-question');
+                if (!faqQuestion) return;
+
+                const item = faqQuestion.parentElement;
+                const answer = item.querySelector('.faq-answer');
+                const isOpen = item.classList.contains('open');
+
+                // Collapse all
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('open');
+                    i.querySelector('.faq-answer').style.maxHeight = null;
+                });
+
+                if (!isOpen) {
+                    item.classList.add('open');
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                }
+            });
         }
 
         function setupCarousel() {
@@ -745,7 +885,7 @@
                 autoplayTimeout = setTimeout(() => {
                     showSlide(currentCarouselIndex + 1);
                     autoplay();
-                }, 5000);
+                }, 6000);
             }
 
             dots.forEach((dot, index) => {
@@ -762,25 +902,97 @@
             autoplay();
         }
 
-        function setupFAQ() {
-            const faqItems = document.querySelectorAll('.faq-item');
-
-            faqItems.forEach(item => {
-                const question = item.querySelector('.faq-question');
-                const answer = item.querySelector('.faq-answer');
-
-                question.addEventListener('click', () => {
-                    const isOpen = item.classList.contains('open');
-
-                    faqItems.forEach(i => i.classList.remove('open'));
-
-                    if (!isOpen) {
-                        item.classList.add('open');
-                        const height = answer.scrollHeight;
-                        answer.style.maxHeight = height + 'px';
-                    }
+        function setupPlannerEvents() {
+            // Service type selectors
+            document.querySelectorAll('[data-service]').forEach(el => {
+                el.addEventListener('click', () => {
+                    document.querySelectorAll('[data-service]').forEach(x => x.classList.remove('active'));
+                    el.classList.add('active');
+                    selectedService = el.dataset.service;
+                    updateEstimates();
                 });
             });
+
+            // Project scale selectors
+            document.querySelectorAll('[data-scale]').forEach(el => {
+                el.addEventListener('click', () => {
+                    document.querySelectorAll('[data-scale]').forEach(x => x.classList.remove('active'));
+                    el.classList.add('active');
+                    selectedScale = el.dataset.scale;
+                    updateEstimates();
+                });
+            });
+
+            // Add-on checkbox list elements
+            document.querySelectorAll('[data-addon]').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    const checkbox = el.querySelector('.planner-checkbox-input');
+                    if (e.target !== checkbox) {
+                        checkbox.checked = !checkbox.checked;
+                    }
+                    
+                    const addonKey = el.dataset.addon;
+                    if (checkbox.checked) {
+                        selectedAddons.add(addonKey);
+                        el.classList.add('active');
+                    } else {
+                        selectedAddons.delete(addonKey);
+                        el.classList.remove('active');
+                    }
+                    updateEstimates();
+                });
+            });
+
+            updateEstimates(); // Initial call
+        }
+
+        function updateEstimates() {
+            const service = serviceRates[selectedService];
+            const scale = scaleMultipliers[selectedScale];
+            
+            let baseMin = service.minWeeks * scale.weeksMult;
+            let baseMax = service.maxWeeks * scale.weeksMult;
+            let complexityVal = service.complexity * scale.compMult;
+
+            selectedAddons.forEach(addonKey => {
+                const addon = addonRates[addonKey];
+                baseMin += addon.weeks;
+                baseMax += addon.weeks;
+                complexityVal += addon.complexity;
+            });
+
+            complexityVal = Math.min(Math.round(complexityVal), 100);
+            const timelineText = `${Math.round(baseMin)}-${Math.round(baseMax)} Weeks`;
+
+            document.getElementById('estimator-timeline').textContent = timelineText;
+            document.getElementById('estimator-complexity').textContent = `${complexityVal}%`;
+            document.getElementById('estimator-meter-fill').style.width = `${complexityVal}%`;
+        }
+
+        function sendWhatsAppProposal() {
+            const serviceName = serviceRates[selectedService].title;
+            const scaleLabel = scaleMultipliers[selectedScale].label;
+            const addonsList = Array.from(selectedAddons).map(k => addonRates[k].title).join(', ') || 'None';
+            const timeline = document.getElementById('estimator-timeline').textContent;
+            const complexity = document.getElementById('estimator-complexity').textContent;
+
+            const whatsappText = [
+                `*Navrivon Custom Project Estimate*`,
+                `-------------------------------------`,
+                `*Service Type:* ${serviceName}`,
+                `*Project Scale:* ${scaleLabel}`,
+                `*Add-ons Selected:* ${addonsList}`,
+                `*Estimated Delivery Timeline:* ${timeline}`,
+                `*Complexity Level:* ${complexity}`,
+                `-------------------------------------`,
+                `Hi Hamid / Ehtisham, I just generated this project scope estimate on your website and would like to review it during a discovery call.`
+            ].join('\n');
+
+            const whatsappNumber = (appData.company.phone || '').replace(/\D/g, '');
+            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
+
+            window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+            showToast('Redirecting to WhatsApp with your project scope...');
         }
 
         function setupContactForm() {
@@ -810,19 +1022,20 @@
                     const email = (formData.get('email') || '').toString().trim();
                     const subject = (formData.get('subject') || '').toString().trim();
                     const message = (formData.get('message') || '').toString().trim();
+                    
                     const whatsappNumber = (appData.company.phone || '').replace(/\D/g, '');
                     const whatsappText = [
-                        'New Website Inquiry',
-                        '',
-                        `Name: ${name}`,
-                        `Email: ${email}`,
-                        `Subject: ${subject}`,
-                        `Message: ${message}`
+                        `*New Inquiry via Navrivon Form*`,
+                        ``,
+                        `*Name:* ${name}`,
+                        `*Email:* ${email}`,
+                        `*Subject:* ${subject}`,
+                        `*Message:* ${message}`
                     ].join('\n');
                     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappText)}`;
 
                     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-                    showToast('Redirecting to WhatsApp with your message...');
+                    showToast('Redirecting to WhatsApp with your inquiry message...');
                     form.reset();
                 }
             });
@@ -856,7 +1069,6 @@
                 });
             });
 
-            // Close menu on resize
             window.addEventListener('resize', () => {
                 if (window.innerWidth > 1024) {
                     hamburger.classList.remove('active');
