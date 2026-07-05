@@ -82,21 +82,6 @@
       "description": "Native and cross-platform iOS and Android apps with clean, modern UX and scalable architecture."
     },
     {
-      "icon": "https://cdn.simpleicons.org/wordpress/21759B",
-      "title": "WordPress Development",
-      "description": "Custom WordPress websites, bespoke theme builds, complex plugin integrations, and speed optimization."
-    },
-    {
-      "icon": "https://cdn.simpleicons.org/shopify/95BF47",
-      "title": "Shopify Development",
-      "description": "Shopify storefronts, custom liquid themes, app integrations, and conversion-focused eCommerce experiences."
-    },
-    {
-      "icon": "https://cdn.simpleicons.org/saas/FF6B6B",
-      "title": "SaaS Product Development",
-      "description": "End-to-end SaaS design and engineering, including multi-tenant databases, billing gateways, and analytics."
-    },
-    {
       "icon": "https://cdn.simpleicons.org/fastapi/009688",
       "title": "API Development & Integration",
       "description": "REST/GraphQL API design, secure third-party integrations, and robust backend microservices."
@@ -105,16 +90,6 @@
       "icon": "https://cdn.simpleicons.org/react/61DAFB",
       "title": "Custom Web Applications",
       "description": "Internal business tools, admin portals, and automated workflow systems that streamline your operations."
-    },
-    {
-      "icon": "https://cdn.simpleicons.org/figma/F24E1E",
-      "title": "UI/UX Design",
-      "description": "User research, wireframing, high-fidelity prototypes, and polished interfaces that maximize user engagement."
-    },
-    {
-      "icon": "https://cdn.simpleicons.org/vercel/ffffff",
-      "title": "MVP Development",
-      "description": "Rapid MVP delivery to validate your product ideas in market quickly with a clear blueprint for future scaling."
     },
     {
       "icon": "https://cdn.simpleicons.org/sentry/362D59",
